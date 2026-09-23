@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Footer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        /* Main Content */
+        .content {
+            min-height: 70vh;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .content h1 {
+            color: #183b7a;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #183b7a;
+            color: white;
+            padding: 40px 8%;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .footer-box p {
+            line-height: 1.6;
+        }
+
+        .footer-box ul {
+            list-style: none;
+        }
+
+        .footer-box li {
+            margin-bottom: 10px;
+        }
+
+        .footer-box a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-box a:hover {
+            color: #ffd700;
+        }
+
+        /* Bottom Footer */
+        .footer-bottom {
+            border-top: 1px solid #ffffff55;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 800px) {
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Content -->
+    <section class="content">
+
+        <h1>Welcome to My Website</h1>
+
+        <p>
+            This webpage demonstrates a responsive footer
+            using HTML and CSS.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+
+            <!-- About -->
+            <div class="footer-box">
+
+                <h2>About Us</h2>
+
+                <p>
+                    We provide quality education and
+                    technology-related learning resources.
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+
+                <h2>Quick Links</h2>
+
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+            </div>
+
+            <!-- Services -->
+            <div class="footer-box">
+
+                <h2>Services</h2>
+
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">Data Science</a></li>
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box">
+
+                <h2>Contact</h2>
+
+                <p>Email: info@example.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>India</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 My Website. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

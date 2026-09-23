@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    animation: move 3s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(300px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box"></div>
+
+</body>
+</html>

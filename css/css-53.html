@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login and Signup</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #183b7a, #4b79c9);
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            width: 900px;
+            max-width: 100%;
+
+            background-color: white;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            border-radius: 15px;
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Login Section */
+        .login {
+            padding: 45px;
+        }
+
+        .login h1 {
+            color: #183b7a;
+            margin-bottom: 10px;
+        }
+
+        .login p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* Signup Section */
+        .signup {
+            padding: 45px;
+            background-color: #e8eef7;
+        }
+
+        .signup h1 {
+            color: #183b7a;
+            margin-bottom: 10px;
+        }
+
+        .signup p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+            border-radius: 6px;
+
+            font-size: 15px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #183b7a;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+
+            padding: 13px;
+
+            background-color: #183b7a;
+            color: white;
+
+            border: none;
+            border-radius: 6px;
+
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #102b5d;
+        }
+
+        /* Links */
+        .link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .link a {
+            color: #183b7a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .login,
+            .signup {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Login -->
+        <section class="login">
+
+            <h1>Login</h1>
+
+            <p>Welcome back! Please login to your account.</p>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label for="login-email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="login-email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="login-password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="login-password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit" class="btn">
+                    Login
+                </button>
+
+            </form>
+
+            <div class="link">
+
+                <p>
+                    Forgot your password?
+                    <a href="#">Reset</a>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Signup -->
+        <section class="signup">
+
+            <h1>Sign Up</h1>
+
+            <p>Create a new account.</p>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit" class="btn">
+                    Create Account
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</body>
+</html>

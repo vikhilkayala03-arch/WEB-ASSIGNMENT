@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+header {
+    background: #183b7a;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+nav {
+    background: #222;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+}
+
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: lightblue;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.card {
+    flex: 1;
+    padding: 30px;
+    background: #eee;
+    text-align: center;
+}
+
+@media(max-width:600px) {
+    .cards {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Narayana College</h1>
+    <p>Education for a Better Future</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Courses</a>
+    <a href="#">Contact</a>
+</nav>
+
+<section class="hero">
+    <h1>Welcome to Narayana College</h1>
+    <p>Learn, Innovate and Succeed</p>
+</section>
+
+<section class="cards">
+
+<div class="card">
+    <h2>Engineering</h2>
+    <p>Modern engineering programs.</p>
+</div>
+
+<div class="card">
+    <h2>Science</h2>
+    <p>Science and technology education.</p>
+</div>
+
+<div class="card">
+    <h2>Management</h2>
+    <p>Business and management courses.</p>
+</div>
+
+</section>
+
+</body>
+</html>

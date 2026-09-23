@@ -1,0 +1,1690 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #7c3aed;
+            --secondary: #06b6d4;
+            --accent: #f97316;
+            --dark: #111827;
+            --text: #374151;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%,
+                    rgba(124, 58, 237, 0.16),
+                    transparent 30%),
+                radial-gradient(circle at 90% 20%,
+                    rgba(6, 182, 212, 0.15),
+                    transparent 28%),
+                linear-gradient(135deg, #f8fafc, #eef2ff);
+
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+
+        header {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4c1d95 0%,
+                    #7c3aed 45%,
+                    #0891b2 100%
+                );
+
+            color: white;
+            text-align: center;
+
+            padding: 70px 20px 85px;
+
+            box-shadow:
+                0 12px 35px rgba(76, 29, 149, 0.25);
+        }
+
+        header::before,
+        header::after {
+            content: "";
+            position: absolute;
+
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+        header::before {
+            width: 260px;
+            height: 260px;
+            top: -150px;
+            left: -70px;
+        }
+
+        header::after {
+            width: 330px;
+            height: 330px;
+            right: -120px;
+            bottom: -220px;
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 1;
+
+            font-size: clamp(34px, 6vw, 58px);
+            font-weight: 800;
+
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        header p {
+            position: relative;
+            z-index: 1;
+
+            font-size: 18px;
+            opacity: 0.92;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            width: min(1180px, 92%);
+
+            margin:
+                -38px auto
+                55px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PROGRAM GRID */
+
+        .programs {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px, 1fr)
+                );
+
+            gap: 22px;
+        }
+
+        /* CARD */
+
+        .card {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                rgba(255, 255, 255, 0.92);
+
+            padding: 27px 24px 24px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.75);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(31, 41, 55, 0.10);
+
+            backdrop-filter: blur(12px);
+
+            transition:
+                transform 0.28s ease,
+                box-shadow 0.28s ease,
+                border-color 0.28s ease;
+        }
+
+        /* COLOR STRIP */
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary),
+                    var(--accent)
+                );
+        }
+
+        /* DECORATION */
+
+        .card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            right: -45px;
+            bottom: -45px;
+
+            background:
+                rgba(124, 58, 237, 0.07);
+        }
+
+        /* CARD HOVER */
+
+        .card:hover {
+            transform:
+                translateY(-8px)
+                scale(1.015);
+
+            box-shadow:
+                0 20px 45px
+                rgba(76, 29, 149, 0.18);
+
+            border-color:
+                rgba(124, 58, 237, 0.25);
+        }
+
+        /* CARD TITLE */
+
+        .card h2 {
+            color: #4c1d95;
+
+            font-size: 19px;
+
+            line-height: 1.35;
+
+            margin-bottom: 11px;
+        }
+
+        /* CARD DESCRIPTION */
+
+        .card p {
+            color: var(--muted);
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+        /* BUTTON */
+
+        .card a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            position: relative;
+            z-index: 2;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    #5b21b6
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 11px 18px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 7px 18px
+                rgba(124, 58, 237, 0.25);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        /* ARROW */
+
+        .card a::after {
+            content: "→";
+
+            font-size: 17px;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+        /* BUTTON HOVER */
+
+        .card a:hover {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0891b2,
+                    #0e7490
+                );
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(8, 145, 178, 0.25);
+        }
+
+        .card a:hover::after {
+            transform:
+                translateX(4px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 50px;
+
+            background: #111827;
+
+            color: #dbeafe;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-top:
+                4px solid #7c3aed;
+        }
+
+        footer p {
+            font-size: 15px;
+
+            letter-spacing: 0.4px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding:
+                    55px 16px
+                    75px;
+            }
+
+            header h1 {
+                font-size: 34px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 94%;
+
+                margin-top: -28px;
+            }
+
+            .programs {
+                grid-template-columns: 1fr;
+
+                gap: 17px;
+            }
+
+            .card {
+                padding:
+                    24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>CSS Programs</h1>
+
+        <p>
+            ✦ HTML &amp; CSS Laboratory Exercises ✦
+        </p>
+
+    </header>
+
+
+    <!-- PROGRAMS -->
+
+    <div class="container">
+
+        <div class="programs">
+
+            <!-- 1 -->
+
+            <div class="card">
+                <h2>
+                    1. Inline, Internal &amp; External CSS
+                </h2>
+
+                <p>
+                    Demonstrate three types of CSS.
+                </p>
+
+                <a href="css-01.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="card">
+                <h2>
+                    2. CSS Selectors
+                </h2>
+
+                <p>
+                    Demonstrate different CSS selectors.
+                </p>
+
+                <a href="css-02.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 3 -->
+
+            <div class="card">
+                <h2>
+                    3. Colors, Backgrounds &amp; Borders
+                </h2>
+
+                <p>
+                    Demonstrate CSS colors and borders.
+                </p>
+
+                <a href="css-03.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="card">
+                <h2>
+                    4. Font Properties
+                </h2>
+
+                <p>
+                    Demonstrate fonts and text formatting.
+                </p>
+
+                <a href="css-04.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 5 -->
+
+            <div class="card">
+                <h2>
+                    5. CSS Box Model
+                </h2>
+
+                <p>
+                    Demonstrate margin, border, padding and content.
+                </p>
+
+                <a href="css-05.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 6 -->
+
+            <div class="card">
+                <h2>
+                    6. Width, Height &amp; Sizing
+                </h2>
+
+                <p>
+                    Demonstrate CSS sizing properties.
+                </p>
+
+                <a href="css-06.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 7 -->
+
+            <div class="card">
+                <h2>
+                    7. CSS Positioning
+                </h2>
+
+                <p>
+                    Static, relative, absolute, fixed and sticky.
+                </p>
+
+                <a href="css-07.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 8 -->
+
+            <div class="card">
+                <h2>
+                    8. Float &amp; Clear
+                </h2>
+
+                <p>
+                    Demonstrate float and clear properties.
+                </p>
+
+                <a href="css-08.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 9 -->
+
+            <div class="card">
+                <h2>
+                    9. Navigation Bar
+                </h2>
+
+                <p>
+                    Create a styled navigation bar.
+                </p>
+
+                <a href="css-09.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 10 -->
+
+            <div class="card">
+                <h2>
+                    10. Pseudo-Classes
+                </h2>
+
+                <p>
+                    Hover, active, focus and visited.
+                </p>
+
+                <a href="css-10.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 11 -->
+
+            <div class="card">
+                <h2>
+                    11. Pseudo-Elements
+                </h2>
+
+                <p>
+                    Before, after, first-letter and first-line.
+                </p>
+
+                <a href="css-11.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 12 -->
+
+            <div class="card">
+                <h2>
+                    12. Lists &amp; Tables
+                </h2>
+
+                <p>
+                    Styled CSS lists and tables.
+                </p>
+
+                <a href="css-12.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 13 -->
+
+            <div class="card">
+                <h2>
+                    13. Registration Form
+                </h2>
+
+                <p>
+                    Create a styled registration form.
+                </p>
+
+                <a href="css-13.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 14 -->
+
+            <div class="card">
+                <h2>
+                    14. Flexbox
+                </h2>
+
+                <p>
+                    Demonstrate CSS Flexbox.
+                </p>
+
+                <a href="css-14.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 15 -->
+
+            <div class="card">
+                <h2>
+                    15. CSS Grid
+                </h2>
+
+                <p>
+                    Demonstrate CSS Grid layout.
+                </p>
+
+                <a href="css-15.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 16 -->
+
+            <div class="card">
+                <h2>
+                    16. Media Queries
+                </h2>
+
+                <p>
+                    Create a responsive webpage.
+                </p>
+
+                <a href="css-16.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 17 -->
+
+            <div class="card">
+                <h2>
+                    17. Transitions &amp; Transformations
+                </h2>
+
+                <p>
+                    Demonstrate CSS transitions and transforms.
+                </p>
+
+                <a href="css-17.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 18 -->
+
+            <div class="card">
+                <h2>
+                    18. CSS Animations
+                </h2>
+
+                <p>
+                    Demonstrate CSS animations.
+                </p>
+
+                <a href="css-18.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 19 -->
+
+            <div class="card">
+                <h2>
+                    19. Responsive Navigation
+                </h2>
+
+                <p>
+                    Create a responsive navigation menu.
+                </p>
+
+                <a href="css-19.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 20 -->
+
+            <div class="card">
+                <h2>
+                    20. Personal Portfolio
+                </h2>
+
+                <p>
+                    Create a personal portfolio webpage.
+                </p>
+
+                <a href="css-20.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 21 -->
+
+            <div class="card">
+                <h2>
+                    21. Student Profile
+                </h2>
+
+                <p>
+                    Create a college student profile.
+                </p>
+
+                <a href="css-21.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 22 -->
+
+            <div class="card">
+                <h2>
+                    22. Login Page
+                </h2>
+
+                <p>
+                    Create a login page.
+                </p>
+
+                <a href="css-22.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 23 -->
+
+            <div class="card">
+                <h2>
+                    23. Product Card
+                </h2>
+
+                <p>
+                    Create a product card layout.
+                </p>
+
+                <a href="css-23.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 24 -->
+
+            <div class="card">
+                <h2>
+                    24. Photo Gallery
+                </h2>
+
+                <p>
+                    Create a responsive photo gallery.
+                </p>
+
+                <a href="css-24.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 25 -->
+
+            <div class="card">
+                <h2>
+                    25. Website Homepage
+                </h2>
+
+                <p>
+                    Create a complete homepage.
+                </p>
+
+                <a href="css-25.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 26 -->
+
+            <div class="card">
+                <h2>
+                    26. Inheritance &amp; Specificity
+                </h2>
+
+                <p>
+                    Demonstrate CSS inheritance.
+                </p>
+
+                <a href="css-26.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 27 -->
+
+            <div class="card">
+                <h2>
+                    27. Selector Types
+                </h2>
+
+                <p>
+                    Universal, element, class, ID and attribute.
+                </p>
+
+                <a href="css-27.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 28 -->
+
+            <div class="card">
+                <h2>
+                    28. Combinator Selectors
+                </h2>
+
+                <p>
+                    Descendant, child and sibling selectors.
+                </p>
+
+                <a href="css-28.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 29 -->
+
+            <div class="card">
+                <h2>
+                    29. CSS Variables
+                </h2>
+
+                <p>
+                    Demonstrate custom CSS properties.
+                </p>
+
+                <a href="css-29.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 30 -->
+
+            <div class="card">
+                <h2>
+                    30. Background Images
+                </h2>
+
+                <p>
+                    Demonstrate background images.
+                </p>
+
+                <a href="css-30.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 31 -->
+
+            <div class="card">
+                <h2>
+                    31. CSS Gradients
+                </h2>
+
+                <p>
+                    Linear and radial gradients.
+                </p>
+
+                <a href="css-31.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 32 -->
+
+            <div class="card">
+                <h2>
+                    32. CSS Shadows
+                </h2>
+
+                <p>
+                    Box-shadow and text-shadow.
+                </p>
+
+                <a href="css-32.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 33 -->
+
+            <div class="card">
+                <h2>
+                    33. Border Radius
+                </h2>
+
+                <p>
+                    Create different shapes using CSS.
+                </p>
+
+                <a href="css-33.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 34 -->
+
+            <div class="card">
+                <h2>
+                    34. Opacity &amp; Transparency
+                </h2>
+
+                <p>
+                    Demonstrate opacity and transparency.
+                </p>
+
+                <a href="css-34.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 35 -->
+
+            <div class="card">
+                <h2>
+                    35. Overflow
+                </h2>
+
+                <p>
+                    Demonstrate CSS overflow.
+                </p>
+
+                <a href="css-35.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 36 -->
+
+            <div class="card">
+                <h2>
+                    36. Z-Index
+                </h2>
+
+                <p>
+                    Demonstrate stacking order.
+                </p>
+
+                <a href="css-36.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 37 -->
+
+            <div class="card">
+                <h2>
+                    37. Display Properties
+                </h2>
+
+                <p>
+                    Block, inline, inline-block and none.
+                </p>
+
+                <a href="css-37.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 38 -->
+
+            <div class="card">
+                <h2>
+                    38. Visibility
+                </h2>
+
+                <p>
+                    Demonstrate hiding elements.
+                </p>
+
+                <a href="css-38.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 39 -->
+
+            <div class="card">
+                <h2>
+                    39. Dropdown Menu
+                </h2>
+
+                <p>
+                    Create a CSS dropdown menu.
+                </p>
+
+                <a href="css-39.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 40 -->
+
+            <div class="card">
+                <h2>
+                    40. Image Hover
+                </h2>
+
+                <p>
+                    Create an image hover effect.
+                </p>
+
+                <a href="css-40.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 41 -->
+
+            <div class="card">
+                <h2>
+                    41. Tooltip
+                </h2>
+
+                <p>
+                    Create a CSS tooltip.
+                </p>
+
+                <a href="css-41.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 42 -->
+
+            <div class="card">
+                <h2>
+                    42. Button Hover Animation
+                </h2>
+
+                <p>
+                    Create a CSS-only button animation.
+                </p>
+
+                <a href="css-42.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 43 -->
+
+            <div class="card">
+                <h2>
+                    43. CSS Filters
+                </h2>
+
+                <p>
+                    Blur, grayscale, brightness and contrast.
+                </p>
+
+                <a href="css-43.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 44 -->
+
+            <div class="card">
+                <h2>
+                    44. Object Fit
+                </h2>
+
+                <p>
+                    Demonstrate object-fit and object-position.
+                </p>
+
+                <a href="css-44.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 45 -->
+
+            <div class="card">
+                <h2>
+                    45. Responsive Gallery
+                </h2>
+
+                <p>
+                    Create a responsive image gallery.
+                </p>
+
+                <a href="css-45.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 46 -->
+
+            <div class="card">
+                <h2>
+                    46. Flexbox Cards
+                </h2>
+
+                <p>
+                    Create cards using Flexbox.
+                </p>
+
+                <a href="css-46.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 47 -->
+
+            <div class="card">
+                <h2>
+                    47. Dashboard
+                </h2>
+
+                <p>
+                    Create a CSS Grid dashboard.
+                </p>
+
+                <a href="css-47.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 48 -->
+
+            <div class="card">
+                <h2>
+                    48. Two Column Layout
+                </h2>
+
+                <p>
+                    Create a two-column Grid layout.
+                </p>
+
+                <a href="css-48.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 49 -->
+
+            <div class="card">
+                <h2>
+                    49. Three Column Layout
+                </h2>
+
+                <p>
+                    Create three columns using Flexbox.
+                </p>
+
+                <a href="css-49.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 50 -->
+
+            <div class="card">
+                <h2>
+                    50. Sticky Header
+                </h2>
+
+                <p>
+                    Create a sticky header.
+                </p>
+
+                <a href="css-50.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 51 -->
+
+            <div class="card">
+                <h2>
+                    51. Fixed Sidebar
+                </h2>
+
+                <p>
+                    Create a fixed sidebar.
+                </p>
+
+                <a href="css-51.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 52 -->
+
+            <div class="card">
+                <h2>
+                    52. Responsive Footer
+                </h2>
+
+                <p>
+                    Create a responsive footer.
+                </p>
+
+                <a href="css-52.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 53 -->
+
+            <div class="card">
+                <h2>
+                    53. Login &amp; Signup
+                </h2>
+
+                <p>
+                    Create responsive authentication forms.
+                </p>
+
+                <a href="css-53.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 54 -->
+
+            <div class="card">
+                <h2>
+                    54. Contact Form
+                </h2>
+
+                <p>
+                    Create a responsive contact form.
+                </p>
+
+                <a href="css-54.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 55 -->
+
+            <div class="card">
+                <h2>
+                    55. College Homepage
+                </h2>
+
+                <p>
+                    Create a responsive college homepage.
+                </p>
+
+                <a href="css-55.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 56 -->
+
+            <div class="card">
+                <h2>
+                    56. Restaurant
+                </h2>
+
+                <p>
+                    Create a restaurant webpage.
+                </p>
+
+                <a href="css-56.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 57 -->
+
+            <div class="card">
+                <h2>
+                    57. Online Shopping
+                </h2>
+
+                <p>
+                    Create an online shopping webpage.
+                </p>
+
+                <a href="css-57.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 58 -->
+
+            <div class="card">
+                <h2>
+                    58. Travel Website
+                </h2>
+
+                <p>
+                    Create a travel website homepage.
+                </p>
+
+                <a href="css-58.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 59 -->
+
+            <div class="card">
+                <h2>
+                    59. News &amp; Blog
+                </h2>
+
+                <p>
+                    Create a news/blog Grid layout.
+                </p>
+
+                <a href="css-59.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 60 -->
+
+            <div class="card">
+                <h2>
+                    60. Portfolio Sections
+                </h2>
+
+                <p>
+                    Create a multi-section portfolio.
+                </p>
+
+                <a href="css-60.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 61 -->
+
+            <div class="card">
+                <h2>
+                    61. Grid Template Areas
+                </h2>
+
+                <p>
+                    Demonstrate Grid template areas.
+                </p>
+
+                <a href="css-61.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 62 -->
+
+            <div class="card">
+                <h2>
+                    62. Flexbox Alignment
+                </h2>
+
+                <p>
+                    Demonstrate Flexbox alignment and order.
+                </p>
+
+                <a href="css-62.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 63 -->
+
+            <div class="card">
+                <h2>
+                    63. Grid + Media Queries
+                </h2>
+
+                <p>
+                    Create responsive Grid layouts.
+                </p>
+
+                <a href="css-63.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 64 -->
+
+            <div class="card">
+                <h2>
+                    64. Mobile First
+                </h2>
+
+                <p>
+                    Create a mobile-first webpage.
+                </p>
+
+                <a href="css-64.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 65 -->
+
+            <div class="card">
+                <h2>
+                    65. CSS Transitions
+                </h2>
+
+                <p>
+                    Demonstrate CSS transitions.
+                </p>
+
+                <a href="css-65.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 66 -->
+
+            <div class="card">
+                <h2>
+                    66. 2D &amp; 3D Transform
+                </h2>
+
+                <p>
+                    Demonstrate 2D and 3D transformations.
+                </p>
+
+                <a href="css-66.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 67 -->
+
+            <div class="card">
+                <h2>
+                    67. Keyframe Animation
+                </h2>
+
+                <p>
+                    Demonstrate CSS keyframes.
+                </p>
+
+                <a href="css-67.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 68 -->
+
+            <div class="card">
+                <h2>
+                    68. Loading Spinner
+                </h2>
+
+                <p>
+                    Create a CSS loading spinner.
+                </p>
+
+                <a href="css-68.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 69 -->
+
+            <div class="card">
+                <h2>
+                    69. Sliding Animation
+                </h2>
+
+                <p>
+                    Create a sliding card animation.
+                </p>
+
+                <a href="css-69.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 70 -->
+
+            <div class="card">
+                <h2>
+                    70. CSS Modal
+                </h2>
+
+                <p>
+                    Create a CSS-only popup.
+                </p>
+
+                <a href="css-70.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 71 -->
+
+            <div class="card">
+                <h2>
+                    71. Dark Mode
+                </h2>
+
+                <p>
+                    Create a dark-mode webpage.
+                </p>
+
+                <a href="css-71.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 72 -->
+
+            <div class="card">
+                <h2>
+                    72. Responsive Typography
+                </h2>
+
+                <p>
+                    Demonstrate responsive text.
+                </p>
+
+                <a href="css-72.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 73 -->
+
+            <div class="card">
+                <h2>
+                    73. clamp(), min(), max()
+                </h2>
+
+                <p>
+                    Demonstrate CSS sizing functions.
+                </p>
+
+                <a href="css-73.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 74 -->
+
+            <div class="card">
+                <h2>
+                    74. CSS calc()
+                </h2>
+
+                <p>
+                    Demonstrate the calc() function.
+                </p>
+
+                <a href="css-74.html">
+                    Open Program
+                </a>
+            </div>
+
+
+            <!-- 75 -->
+
+            <div class="card">
+                <h2>
+                    75. Complete Responsive Website
+                </h2>
+
+                <p>
+                    HTML5 + CSS3 + Flexbox + Grid + Media Queries.
+                </p>
+
+                <a href="css-75.html">
+                    Open Program
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            CSS | 75 Programs
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
+
+This is **one file only** — no separate CSS file is required. Your existing `css-01.html` to `css-75.html` files can stay in the same folder.
