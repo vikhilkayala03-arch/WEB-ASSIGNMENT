@@ -1,1 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>JavaScript Practical Programs</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#1e293b;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    height:70px;
+
+    padding:0 7%;
+
+    background:#111827;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.logo{
+    color:white;
+    font-size:23px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#facc15;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#facc15;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:480px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:60px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #312e81,
+        #4f46e5,
+        #2563eb,
+        #0891b2
+    );
+}
+
+.hero-icon{
+    font-size:75px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin:10px 0;
+    font-weight:900;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:700px;
+}
+
+.main-btn{
+
+    margin-top:30px;
+
+    padding:17px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#4338ca;
+
+    font-size:20px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.main-btn:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.04);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.title h2{
+
+    font-size:35px;
+}
+
+.title p{
+
+    color:#64748b;
+
+    margin-top:8px;
+}
+
+
+/* =========================
+   JAVASCRIPT SUBJECT CARD
+========================= */
+
+.subjects{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(1,1fr);
+
+    gap:25px;
+}
+
+.subject{
+
+    padding:35px;
+
+    border-radius:22px;
+
+    color:white;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.12);
+
+    transition:.3s;
+}
+
+.subject:hover{
+
+    transform:
+    translateY(-8px);
+}
+
+.subject-icon{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+}
+
+.subject h3{
+
+    font-size:28px;
+}
+
+.subject p{
+
+    margin:12px 0 25px;
+
+    opacity:.9;
+}
+
+.subject a{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    background:white;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    color:#7c3aed;
+
+    transition:.3s;
+}
+
+.subject a:hover{
+
+    transform:
+    scale(1.05);
+}
+
+.js-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #db2777
+    );
+}
+
+
+/* =========================
+   JAVASCRIPT SECTION
+========================= */
+
+#javascript{
+
+    display:block;
+
+    animation:
+    fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =========================
+   JS HERO
+========================= */
+
+.js-hero{
+
+    padding:70px 20px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #312e81,
+        #7c3aed,
+        #db2777,
+        #ec4899
+    );
+}
+
+.js-hero .icon{
+
+    font-size:70px;
+}
+
+.js-hero h2{
+
+    font-size:48px;
+}
+
+.js-hero p{
+
+    font-size:18px;
+
+    margin-top:10px;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.categories{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+}
+
+
+/* =========================
+   CATEGORY CARD
+========================= */
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 25px
+    rgba(15,23,42,.08);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-7px);
+
+    box-shadow:
+    0 15px 35px
+    rgba(15,23,42,.15);
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:6px;
+}
+
+.card-icon{
+
+    width:65px;
+    height:65px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:16px;
+
+    font-size:32px;
+
+    margin-bottom:18px;
+}
+
+.card h3{
+
+    font-size:26px;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+    margin-bottom:22px;
+}
+
+.open-btn{
+
+    display:inline-block;
+
+    padding:11px 22px;
+
+    border-radius:30px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+
+    transform:
+    translateX(5px);
+}
+
+
+/* =========================
+   DOM
+========================= */
+
+.dom::before{
+
+    background:
+    linear-gradient(
+        90deg,
+        #4f46e5,
+        #2563eb,
+        #06b6d4
+    );
+}
+
+.dom .card-icon{
+
+    background:#e0e7ff;
+}
+
+.dom .open-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #4f46e5,
+        #2563eb,
+        #06b6d4
+    );
+}
+
+
+/* =========================
+   STORAGE
+========================= */
+
+.storage::before{
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #06b6d4
+    );
+}
+
+.storage .card-icon{
+
+    background:#dbeafe;
+}
+
+.storage .open-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #0891b2
+    );
+}
+
+
+/* =========================
+   MINI PROJECTS
+========================= */
+
+.mini::before{
+
+    background:
+    linear-gradient(
+        90deg,
+        #f97316,
+        #ec4899,
+        #7c3aed
+    );
+}
+
+.mini .card-icon{
+
+    background:#ffedd5;
+}
+
+.mini .open-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ec4899,
+        #7c3aed
+    );
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+.forms::before{
+
+    background:
+    linear-gradient(
+        90deg,
+        #16a34a,
+        #06b6d4
+    );
+}
+
+.forms .card-icon{
+
+    background:#dcfce7;
+}
+
+.forms .open-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #16a34a,
+        #06b6d4
+    );
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+.events::before{
+
+    background:
+    linear-gradient(
+        90deg,
+        #f97316,
+        #ec4899
+    );
+}
+
+.events .card-icon{
+
+    background:#ffedd5;
+}
+
+.events .open-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ec4899
+    );
+}
+
+
+/* =========================
+   BROWSER
+========================= */
+
+.browser::before{
+
+    background:
+    linear-gradient(
+        90deg,
+        #0f766e,
+        #0891b2,
+        #2563eb
+    );
+}
+
+.browser .card-icon{
+
+    background:#ccfbf1;
+}
+
+.browser .open-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f766e,
+        #0891b2,
+        #2563eb
+    );
+}
+
+
+/* =========================
+   BASICS
+========================= */
+
+.basics::before{
+
+    background:
+    linear-gradient(
+        90deg,
+        #7c3aed,
+        #ec4899
+    );
+}
+
+.basics .card-icon{
+
+    background:#f3e8ff;
+}
+
+.basics .open-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    );
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back{
+
+    text-align:center;
+
+    margin-top:45px;
+}
+
+.back a{
+
+    display:inline-block;
+
+    padding:13px 30px;
+
+    border-radius:30px;
+
+    background:#111827;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.back a:hover{
+
+    background:#facc15;
+
+    color:#111827;
+
+    transform:
+    translateY(-3px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:60px;
+}
+
+footer span{
+
+    color:#facc15;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    .categories{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+
+        font-size:40px;
+    }
+
+    .js-hero h2{
+
+        font-size:38px;
+    }
+}
+
+
+@media(max-width:500px){
+
+    nav{
+
+        height:auto;
+
+        padding:18px;
+
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    nav a{
+
+        margin:0 8px;
+    }
+
+    .hero{
+
+        padding:50px 15px;
+    }
+
+    .hero h1{
+
+        font-size:32px;
+    }
+
+    .hero p{
+
+        font-size:16px;
+    }
+
+    .card{
+
+        padding:25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NAVBAR
+===================================== -->
+
+<nav>
+
+    <div class="logo">
+
+        Java<span>Script</span>
+
+    </div>
+
+
+    <div>
+
+        <!-- GO TO MAIN WEBSITE -->
+
+        <a href="../index.html">
+
+            Home
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================
+     JAVASCRIPT HERO
+===================================== -->
+
+<section class="js-hero">
+
+    <div class="icon">
+
+        ⚡
+
+    </div>
+
+
+    <h2>
+
+        JavaScript
+
+    </h2>
+
+
+    <p>
+
+        Choose a category to open
+        the practical programs
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================================
+     CATEGORIES
+===================================== -->
+
+<div class="container">
+
+
+    <div class="title">
+
+        <h2>
+
+            JavaScript Practical Programs
+
+        </h2>
+
+
+        <p>
+
+            Select any category below
+
+        </p>
+
+    </div>
+
+
+
+    <div class="categories">
+
+
+        <!-- =========================
+             DOM
+        ========================== -->
+
+        <div class="card dom">
+
+            <div class="card-icon">
+
+                🟣
+
+            </div>
+
+
+            <h3>
+
+                DOM Manipulation
+
+            </h3>
+
+
+            <p>
+
+                DOM elements, methods,
+                attributes, classes,
+                tables and dynamic content.
+
+            </p>
+
+
+            <!-- CORRECT LINK -->
+
+            <a
+                href="dom/index.html"
+                class="open-btn"
+            >
+
+                Open DOM →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =========================
+             STORAGE
+        ========================== -->
+
+        <div class="card storage">
+
+            <div class="card-icon">
+
+                🔵
+
+            </div>
+
+
+            <h3>
+
+                Web Storage
+
+            </h3>
+
+
+            <p>
+
+                LocalStorage, SessionStorage,
+                JSON, CRUD and persistent data.
+
+            </p>
+
+
+            <!-- CORRECT LINK -->
+
+            <a
+                href="storage/index.html"
+                class="open-btn"
+            >
+
+                Open Storage →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =========================
+             MINI PROJECTS
+        ========================== -->
+
+        <div class="card mini">
+
+            <div class="card-icon">
+
+                🟠
+
+            </div>
+
+
+            <h3>
+
+                Mini Projects
+
+            </h3>
+
+
+            <p>
+
+                Calculator, clock, stopwatch,
+                quiz, games, notes and
+                other projects.
+
+            </p>
+
+
+            <!-- CORRECT LINK -->
+
+            <a
+                href="mini-projects/index.html"
+                class="open-btn"
+            >
+
+                Open Projects →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =========================
+             FORMS
+        ========================== -->
+
+        <div class="card forms">
+
+            <div class="card-icon">
+
+                🟢
+
+            </div>
+
+
+            <h3>
+
+                Forms & Validation
+
+            </h3>
+
+
+            <p>
+
+                Registration forms,
+                validation, regex,
+                passwords and dynamic forms.
+
+            </p>
+
+
+            <!-- CORRECT LINK -->
+
+            <a
+                href="forms/index.html"
+                class="open-btn"
+            >
+
+                Open Forms →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =========================
+             EVENTS
+        ========================== -->
+
+        <div class="card events">
+
+            <div class="card-icon">
+
+                🟠
+
+            </div>
+
+
+            <h3>
+
+                JavaScript Events
+
+            </h3>
+
+
+            <p>
+
+                Click, mouse, keyboard,
+                form events, listeners,
+                bubbling and capturing.
+
+            </p>
+
+
+            <!-- CORRECT LINK -->
+
+            <a
+                href="events/index.html"
+                class="open-btn"
+            >
+
+                Open Events →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =========================
+             BROWSER
+        ========================== -->
+
+        <div class="card browser">
+
+            <div class="card-icon">
+
+                🔵
+
+            </div>
+
+
+            <h3>
+
+                Browser Objects
+
+            </h3>
+
+
+            <p>
+
+                Window, Navigator,
+                Location, History,
+                Screen, timers and
+                geolocation.
+
+            </p>
+
+
+            <!-- CORRECT LINK -->
+
+            <a
+                href="browser/index.html"
+                class="open-btn"
+            >
+
+                Open Browser →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =========================
+             BASICS
+        ========================== -->
+
+        <div class="card basics">
+
+            <div class="card-icon">
+
+                🟣
+
+            </div>
+
+
+            <h3>
+
+                JavaScript Basics
+
+            </h3>
+
+
+            <p>
+
+                Variables, operators,
+                conditions, loops,
+                functions, arrays
+                and objects.
+
+            </p>
+
+
+            <!-- CORRECT LINK -->
+
+            <a
+                href="basics/index.html"
+                class="open-btn"
+            >
+
+                Open Basics →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         BACK TO MAIN WEBSITE
+    ====================================== -->
+
+    <div class="back">
+
+        <a href="../index.html">
+
+            ↑ Back to Main Home
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <p>
+
+        © 2026
+
+        <span>
+            Web Technology Lab
+        </span>
+
+        | JavaScript Practical Programs
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

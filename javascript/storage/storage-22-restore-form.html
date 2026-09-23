@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restore Form Data</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Restore Form Data</h1><p>Restore data after refresh.</p></header>
+<main class="container">
+<div class="card">
+<input id="v" placeholder="Restored automatically"><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+v.value=localStorage.savedForm||'';v.oninput=()=>localStorage.savedForm=v.value;out.textContent='Saved data is restored on refresh.'
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Marks Database</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Student Marks Database</h1><p>Store student marks.</p></header>
+<main class="container">
+<div class="card">
+<input id="name" placeholder="Student"><input id="mark" type="number" placeholder="Mark"><button onclick="save()">Save</button><button onclick="render()">Show</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function save(){let a=JSON.parse(localStorage.students||'[]');a.push({name:name.value,mark:+mark.value});localStorage.students=JSON.stringify(a);out.textContent='Saved'}function render(){out.textContent=JSON.stringify(JSON.parse(localStorage.students||'[]'),null,2)}
+</script>
+</body>
+</html>

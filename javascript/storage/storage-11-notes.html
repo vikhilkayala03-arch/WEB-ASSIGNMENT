@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes using localStorage</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Notes using localStorage</h1><p>Persist notes.</p></header>
+<main class="container">
+<div class="card">
+<input id="v" placeholder="Enter item"><button onclick="save()">Save</button><ul id="out"></ul>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function render(){out.innerHTML='';JSON.parse(localStorage.getItem('items')||'[]').forEach(x=>{let li=document.createElement('li');li.textContent=x;out.appendChild(li)})}function save(){let a=JSON.parse(localStorage.getItem('items')||'[]');a.push(v.value);localStorage.setItem('items',JSON.stringify(a));v.value='';render()}render()
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUD with localStorage</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>CRUD with localStorage</h1><p>Create, read, update and delete records.</p></header>
+<main class="container">
+<div class="card">
+<input id="v" placeholder="Record"><button onclick="create()">Create</button><button onclick="read()">Read</button><button onclick="update()">Update First</button><button onclick="removeOne()">Delete First</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function get(){return JSON.parse(localStorage.records||'[]')}function set(a){localStorage.records=JSON.stringify(a)}function create(){let a=get();a.push(v.value);set(a);read()}function read(){out.textContent=JSON.stringify(get(),null,2)}function update(){let a=get();if(a.length)a[0]=v.value;set(a);read()}function removeOne(){let a=get();a.shift();set(a);read()}
+</script>
+</body>
+</html>

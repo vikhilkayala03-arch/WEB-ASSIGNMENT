@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark/Light Theme Switcher</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Dark/Light Theme Switcher</h1><p>Persist theme choice.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="toggle()">Toggle Theme</button><p id="out">Theme is saved in localStorage.</p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function apply(){document.body.classList.toggle('dark',localStorage.theme==='dark')}function toggle(){localStorage.theme=localStorage.theme==='dark'?'light':'dark';apply()}apply()
+</script>
+</body>
+</html>

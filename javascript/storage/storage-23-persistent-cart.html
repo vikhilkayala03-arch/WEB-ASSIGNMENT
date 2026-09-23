@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persistent Shopping Cart</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Persistent Shopping Cart</h1><p>Persist cart after refresh.</p></header>
+<main class="container">
+<div class="card">
+<input id="key" placeholder="Key" value="demo"><input id="value" placeholder="Value" value="Hello"><button onclick="save()">Save</button><button onclick="load()">Load</button><button onclick="del()">Delete</button><button onclick="clearAll()">Clear</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function save(){localStorage.setItem(key.value,value.value);out.textContent='Saved'}function load(){out.textContent=localStorage.getItem(key.value)||'No data'}function del(){localStorage.removeItem(key.value);out.textContent='Deleted'}function clearAll(){localStorage.clear();out.textContent='Storage cleared'}
+</script>
+</body>
+</html>

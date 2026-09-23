@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-save Form Data</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Auto-save Form Data</h1><p>Automatically save form data.</p></header>
+<main class="container">
+<div class="card">
+<textarea id="v" oninput="save()" placeholder="Type; auto-saved"></textarea><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+v.value=localStorage.draft||'';function save(){localStorage.draft=v.value;out.textContent='Auto-saved'}
+</script>
+</body>
+</html>

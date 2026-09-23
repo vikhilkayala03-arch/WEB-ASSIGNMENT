@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temporary Form Data</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Temporary Form Data</h1><p>Store temporary form data.</p></header>
+<main class="container">
+<div class="card">
+<input id="v" placeholder="Temporary value"><button onclick="save()">Save</button><button onclick="load()">Load</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function save(){sessionStorage.temp=v.value;out.textContent='Saved for session'}function load(){out.textContent=sessionStorage.temp||'No session data'}
+</script>
+</body>
+</html>
