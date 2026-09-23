@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.hero {
+    height: 500px;
+    background: url("https://picsum.photos/1200/600") center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.destinations {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.destination {
+    flex: 1;
+    padding: 40px;
+    background: lightblue;
+    text-align: center;
+}
+
+@media(max-width:600px) {
+    .destinations {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+<h1>Explore The World</h1>
+<p>Your journey starts here.</p>
+</div>
+
+</section>
+
+<section class="destinations">
+
+<div class="destination">
+<h2>Goa</h2>
+<p>Beautiful beaches</p>
+</div>
+
+<div class="destination">
+<h2>Kerala</h2>
+<p>Nature and backwaters</p>
+</div>
+
+<div class="destination">
+<h2>Delhi</h2>
+<p>History and culture</p>
+</div>
+
+</section>
+
+</body>
+</html>

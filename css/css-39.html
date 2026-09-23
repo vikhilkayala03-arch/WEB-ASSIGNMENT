@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.content {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0 4px 10px gray;
+}
+
+.content a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="dropdown">
+
+<button>Courses</button>
+
+<div class="content">
+    <a href="#">Python</a>
+    <a href="#">Java</a>
+    <a href="#">Data Science</a>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+    font-size: clamp(30px, 6vw, 70px);
+}
+
+.box {
+    width: min(90%, 600px);
+    min-height: 200px;
+    padding: 30px;
+    background: lightblue;
+}
+
+.text {
+    width: max(300px, 50%);
+    background: lightgreen;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Responsive Heading</h1>
+
+<div class="box">
+    Using min()
+</div>
+
+<div class="text">
+    Using max()
+</div>
+
+</body>
+</html>

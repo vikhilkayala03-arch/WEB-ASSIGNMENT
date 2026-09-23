@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Descendant */
+div p {
+    color: blue;
+}
+
+/* Child */
+div > span {
+    color: red;
+}
+
+/* Adjacent sibling */
+h2 + p {
+    background: yellow;
+}
+
+/* General sibling */
+h3 ~ p {
+    border: 2px solid green;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+    <p>Descendant selector</p>
+    <span>Child selector</span>
+</div>
+
+<h2>Heading</h2>
+<p>Adjacent sibling</p>
+
+<h3>Another Heading</h3>
+<p>General sibling</p>
+<p>General sibling</p>
+
+</body>
+</html>

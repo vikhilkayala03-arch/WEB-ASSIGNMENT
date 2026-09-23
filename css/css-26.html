@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Inheritance and Specificity</title>
+
+    <style>
+
+        /* Element selector */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333333;
+            background-color: #f4f6f8;
+        }
+
+        /* Inheritance:
+           The paragraph inherits the color
+           from the body element.
+        */
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #183b7a;
+        }
+
+        /* Element selector */
+        p {
+            color: blue;
+            font-size: 18px;
+        }
+
+        /* Class selector */
+        .special {
+            color: green;
+        }
+
+        /* ID selector */
+        #important {
+            color: red;
+        }
+
+        /* Class selector */
+        .box {
+            background-color: #e8eef7;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid #183b7a;
+        }
+
+        /* Specificity example */
+
+        p {
+            color: blue;
+        }
+
+        .text {
+            color: green;
+        }
+
+        #unique {
+            color: red;
+        }
+
+        /* ID has higher specificity than class and element */
+
+        .parent {
+            color: purple;
+        }
+
+        .parent p {
+            color: orange;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Inheritance and Specificity</h1>
+
+        <h2>1. Inheritance Example</h2>
+
+        <div class="box">
+
+            <p>
+                This paragraph inherits the font family
+                from the body element.
+            </p>
+
+        </div>
+
+        <h2>2. Specificity Example</h2>
+
+        <p>
+            This paragraph uses the element selector.
+        </p>
+
+        <p class="special">
+            This paragraph uses the class selector.
+        </p>
+
+        <p id="important">
+            This paragraph uses the ID selector.
+        </p>
+
+        <h2>3. Specificity Priority</h2>
+
+        <p id="unique" class="text">
+            This text has element, class and ID selectors.
+            The ID selector has the highest priority.
+        </p>
+
+        <h2>4. Inherited Color</h2>
+
+        <div class="parent">
+
+            <p>
+                The parent has purple color, but the child
+                paragraph has its own CSS rule, so orange
+                color is applied.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

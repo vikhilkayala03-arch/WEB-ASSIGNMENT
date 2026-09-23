@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <style>
+        /* ------------------------------
+           RESET
+        ------------------------------ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* ------------------------------
+           NAVIGATION
+        ------------------------------ */
+
+        header {
+            background-color: #183b7a;
+            color: white;
+
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* ------------------------------
+           HOME SECTION
+        ------------------------------ */
+
+        .home {
+            min-height: 90vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #183b7a,
+                #4b79c9
+            );
+
+            color: white;
+        }
+
+        .home-content h2 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .home-content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .home-content p {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 13px 28px;
+
+            background-color: #ffd700;
+            color: #183b7a;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+        /* ------------------------------
+           COMMON SECTION
+        ------------------------------ */
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            color: #183b7a;
+
+            font-size: 32px;
+
+            margin-bottom: 40px;
+        }
+
+        /* ------------------------------
+           ABOUT
+        ------------------------------ */
+
+        .about-container {
+            max-width: 900px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+            text-align: center;
+        }
+
+        .about-container p {
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* ------------------------------
+           SKILLS
+        ------------------------------ */
+
+        .skills-container {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill h3 {
+            color: #183b7a;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #666;
+        }
+
+        /* ------------------------------
+           PROJECTS
+        ------------------------------ */
+
+        .projects {
+            background-color: white;
+        }
+
+        .project-container {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            padding: 25px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            background-color: #f4f6f8;
+        }
+
+        .project h3 {
+            color: #183b7a;
+
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            color: #183b7a;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        /* ------------------------------
+           EDUCATION
+        ------------------------------ */
+
+        .education-container {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            gap: 20px;
+        }
+
+        .education-box {
+            background-color: white;
+
+            padding: 25px;
+
+            border-left: 5px solid #183b7a;
+
+            border-radius: 8px;
+
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-box h3 {
+            color: #183b7a;
+
+            margin-bottom: 8px;
+        }
+
+        /* ------------------------------
+           CONTACT
+        ------------------------------ */
+
+        .contact {
+            background-color: #e8eef7;
+        }
+
+        .contact-form {
+            max-width: 650px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+
+            resize: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 13px;
+
+            background-color: #183b7a;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #102b5d;
+        }
+
+        /* ------------------------------
+           FOOTER
+        ------------------------------ */
+
+        footer {
+            background-color: #183b7a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        /* ------------------------------
+           RESPONSIVE DESIGN
+        ------------------------------ */
+
+        @media (max-width: 900px) {
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+            }
+
+            .home-content h2 {
+                font-size: 36px;
+            }
+
+            .home-content h3 {
+                font-size: 22px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================
+         HEADER / NAVIGATION
+    =========================== -->
+
+    <header>
+
+        <h1>My Portfolio</h1>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================
+         HOME
+    =========================== -->
+
+    <section class="home" id="home">
+
+        <div class="home-content">
+
+            <h2>Hello, I'm K. Vikhil</h2>
+
+            <h3>B.Tech Student</h3>
+
+            <p>
+                Welcome to my personal portfolio.
+                I am interested in technology, programming,
+                web development, data science and cybersecurity.
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         ABOUT
+    =========================== -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-container">
+
+            <p>
+                I am a B.Tech second-year student who is
+                interested in learning new technologies and
+                developing practical projects. I enjoy working
+                with programming languages and web technologies.
+                My goal is to improve my technical skills and
+                build useful real-world applications.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         SKILLS
+    =========================== -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My Skills
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+
+                <h3>HTML</h3>
+
+                <p>
+                    Creating webpage structures
+                    using HTML5.
+                </p>
+
+            </div>
+
+            <div class="skill">
+
+                <h3>CSS</h3>
+
+                <p>
+                    Designing responsive and
+                    attractive webpages.
+                </p>
+
+            </div>
+
+            <div class="skill">
+
+                <h3>Python</h3>
+
+                <p>
+                    Programming, problem solving
+                    and data handling.
+                </p>
+
+            </div>
+
+            <div class="skill">
+
+                <h3>Java</h3>
+
+                <p>
+                    Object-oriented programming
+                    and application development.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         PROJECTS
+    =========================== -->
+
+    <section class="projects" id="projects">
+
+        <h2 class="section-title">
+            My Projects
+        </h2>
+
+        <div class="project-container">
+
+            <div class="project">
+
+                <h3>Bright Future Academy</h3>
+
+                <p>
+                    A responsive educational website created
+                    using HTML and CSS. It provides information
+                    about courses and academy services.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Property Finder</h3>
+
+                <p>
+                    A real-estate website concept designed
+                    to help users explore properties and
+                    find suitable homes.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Student Dashboard</h3>
+
+                <p>
+                    A dashboard interface created using
+                    CSS Grid to display student information,
+                    courses and statistics.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         EDUCATION
+    =========================== -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="education-container">
+
+            <div class="education-box">
+
+                <h3>B.Tech</h3>
+
+                <p>
+                    Currently pursuing B.Tech - 2nd Year.
+                </p>
+
+            </div>
+
+            <div class="education-box">
+
+                <h3>Programming</h3>
+
+                <p>
+                    Learning Python, Java, HTML, CSS,
+                    JavaScript and data-related technologies.
+                </p>
+
+            </div>
+
+            <div class="education-box">
+
+                <h3>Career Interests</h3>
+
+                <p>
+                    Web Development, Data Science,
+                    Artificial Intelligence and Cybersecurity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         CONTACT
+    =========================== -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <form class="contact-form">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Enter your message"
+                    required>
+                </textarea>
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 K. Vikhil | My Portfolio
+        </p>
+
+    </footer>
+
+</body>
+</html>
