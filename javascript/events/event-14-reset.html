@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reset Event</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>reset Event</h1><p>Handle form reset.</p></header>
+<main class="container">
+<div class="card">
+<form id="f"><input value="Demo"><button type="reset">Reset</button></form><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+f.onreset=()=>out.textContent='Form reset';
+</script>
+</body>
+</html>

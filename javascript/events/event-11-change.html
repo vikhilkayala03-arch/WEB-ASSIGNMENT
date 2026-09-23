@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>change Event</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>change Event</h1><p>Detect changed input.</p></header>
+<main class="container">
+<div class="card">
+<select id="s"><option>HTML</option><option>CSS</option><option>JavaScript</option></select><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+s.onchange=()=>out.textContent='Selected: '+s.value;
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reaction Time Game</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Reaction Time Game</h1><p>Measure reaction after a signal.</p></header>
+<main class="container">
+<div class="card">
+<button id="b" onclick="start()">Start</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let t;function start(){out.textContent='Wait...';setTimeout(()=>{t=performance.now();out.textContent='CLICK NOW!'},1000+Math.random()*2000);b.onclick=()=>{if(t)out.textContent=`Reaction: ${(performance.now()-t).toFixed(0)} ms`;t=null}}
+</script>
+</body>
+</html>

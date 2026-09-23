@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Ordered List from User Input</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Dynamic Ordered List from User Input</h1><p>Add user input as ordered list items.</p></header>
+<main class="container">
+<div class="card">
+<input id="v"><button onclick="run()">Add</button><ol id="out"></ol>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){if(v.value){let li=document.createElement('li');li.textContent=v.value;out.appendChild(li);v.value=''}}
+</script>
+</body>
+</html>

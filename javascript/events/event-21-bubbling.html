@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Bubbling</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Event Bubbling</h1><p>Demonstrate bubbling.</p></header>
+<main class="container">
+<div class="card">
+<div id="parent" style="padding:20px;border:1px solid">Parent <button id="child">Child</button></div><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+parent.onclick=()=>out.textContent='Parent handler';child.onclick=()=>out.textContent='Child handler, then parent';
+</script>
+</body>
+</html>

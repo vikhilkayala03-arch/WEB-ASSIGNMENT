@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JavaScript Events</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#172033;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+    min-height:50vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #9a3412,
+        #ea580c,
+        #db2777,
+        #7e22ce
+    );
+
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:19px;
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+.program-count{
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    background:#111827;
+
+    padding:15px;
+
+    text-align:center;
+}
+
+nav a{
+    display:inline-block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:5px 8px;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    background:#c2410c;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#db2777;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:35px;
+
+    margin-bottom:10px;
+
+    color:#1e293b;
+}
+
+.title p{
+    color:#64748b;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   PROGRAM GRID
+========================= */
+
+.program-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+
+/* =========================
+   PROGRAM CARD
+========================= */
+
+.program-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    border:1px solid #e2e8f0;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.program-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ea580c,
+        #db2777,
+        #7e22ce
+    );
+}
+
+.program-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.14);
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.number{
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ea580c,
+        #db2777
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.program-card h3{
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+    color:#1e293b;
+
+    line-height:1.4;
+}
+
+.program-card p{
+
+    color:#64748b;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.open-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+    background:#c2410c;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+
+    background:#db2777;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:60px;
+}
+
+footer p{
+    margin:5px;
+}
+
+footer strong{
+    color:#f9a8d4;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    nav a{
+        margin:3px;
+        font-size:13px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    .program-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header>
+
+    <div class="hero">
+
+        <h1>
+            JavaScript Events
+        </h1>
+
+        <p>
+            Explore Mouse, Keyboard, Form & Interactive Events
+        </p>
+
+        <span class="program-count">
+            ⚡ 30 Programs
+        </span>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <a href="../../index.html">
+        🏠 Home
+    </a>
+
+    <a href="../index.html">
+        ← JavaScript
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="container">
+
+
+    <div class="title">
+
+        <h2>
+            JavaScript Event Programs
+        </h2>
+
+        <p>
+            Select any program to view and run the practical
+        </p>
+
+    </div>
+
+
+    <div class="program-grid">
+
+
+        <!-- 01 -->
+
+        <div class="program-card">
+
+            <div class="number">01</div>
+
+            <h3>onclick Event</h3>
+
+            <p>
+                Demonstrate the onclick event using JavaScript.
+            </p>
+
+            <a
+                href="event-01-onclick.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="program-card">
+
+            <div class="number">02</div>
+
+            <h3>ondblclick Event</h3>
+
+            <p>
+                Demonstrate the double-click event.
+            </p>
+
+            <a
+                href="event-02-ondblclick.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="program-card">
+
+            <div class="number">03</div>
+
+            <h3>mouseover and mouseout</h3>
+
+            <p>
+                Demonstrate mouseover and mouseout events.
+            </p>
+
+            <a
+                href="event-03-mouseover-out.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="program-card">
+
+            <div class="number">04</div>
+
+            <h3>mousedown and mouseup</h3>
+
+            <p>
+                Demonstrate mouse button press and release events.
+            </p>
+
+            <a
+                href="event-04-mousedown-up.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="program-card">
+
+            <div class="number">05</div>
+
+            <h3>mousemove Event</h3>
+
+            <p>
+                Demonstrate the mousemove event.
+            </p>
+
+            <a
+                href="event-05-mousemove.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="program-card">
+
+            <div class="number">06</div>
+
+            <h3>keydown Event</h3>
+
+            <p>
+                Detect keyboard key presses using keydown.
+            </p>
+
+            <a
+                href="event-06-keydown.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="program-card">
+
+            <div class="number">07</div>
+
+            <h3>keyup Event</h3>
+
+            <p>
+                Detect keyboard release using keyup.
+            </p>
+
+            <a
+                href="event-07-keyup.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="program-card">
+
+            <div class="number">08</div>
+
+            <h3>Display Key Pressed</h3>
+
+            <p>
+                Display the key pressed by the user.
+            </p>
+
+            <a
+                href="event-08-key-pressed.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="program-card">
+
+            <div class="number">09</div>
+
+            <h3>Keyboard Key Press Counter</h3>
+
+            <p>
+                Count keyboard key presses using JavaScript.
+            </p>
+
+            <a
+                href="event-09-key-counter.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="program-card">
+
+            <div class="number">10</div>
+
+            <h3>Focus and Blur</h3>
+
+            <p>
+                Demonstrate focus and blur events.
+            </p>
+
+            <a
+                href="event-10-focus-blur.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="program-card">
+
+            <div class="number">11</div>
+
+            <h3>change Event</h3>
+
+            <p>
+                Demonstrate the change event.
+            </p>
+
+            <a
+                href="event-11-change.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="program-card">
+
+            <div class="number">12</div>
+
+            <h3>input Event</h3>
+
+            <p>
+                Demonstrate the input event.
+            </p>
+
+            <a
+                href="event-12-input.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="program-card">
+
+            <div class="number">13</div>
+
+            <h3>submit Event</h3>
+
+            <p>
+                Demonstrate form submission events.
+            </p>
+
+            <a
+                href="event-13-submit.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="program-card">
+
+            <div class="number">14</div>
+
+            <h3>reset Event</h3>
+
+            <p>
+                Demonstrate the form reset event.
+            </p>
+
+            <a
+                href="event-14-reset.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="program-card">
+
+            <div class="number">15</div>
+
+            <h3>Button Background Change</h3>
+
+            <p>
+                Change background color using an event.
+            </p>
+
+            <a
+                href="event-15-bg-button.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 16 -->
+
+        <div class="program-card">
+
+            <div class="number">16</div>
+
+            <h3>Dynamic Font Size</h3>
+
+            <p>
+                Change font size dynamically using events.
+            </p>
+
+            <a
+                href="event-16-font-size.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 17 -->
+
+        <div class="program-card">
+
+            <div class="number">17</div>
+
+            <h3>Multiple Buttons and Handlers</h3>
+
+            <p>
+                Create multiple buttons with event handlers.
+            </p>
+
+            <a
+                href="event-17-multiple-buttons.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 18 -->
+
+        <div class="program-card">
+
+            <div class="number">18</div>
+
+            <h3>addEventListener</h3>
+
+            <p>
+                Demonstrate addEventListener().
+            </p>
+
+            <a
+                href="event-18-add-event-listener.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 19 -->
+
+        <div class="program-card">
+
+            <div class="number">19</div>
+
+            <h3>Multiple Event Listeners</h3>
+
+            <p>
+                Add multiple event listeners to an element.
+            </p>
+
+            <a
+                href="event-19-multiple-listeners.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 20 -->
+
+        <div class="program-card">
+
+            <div class="number">20</div>
+
+            <h3>removeEventListener</h3>
+
+            <p>
+                Remove an event listener using JavaScript.
+            </p>
+
+            <a
+                href="event-20-remove-event-listener.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 21 -->
+
+        <div class="program-card">
+
+            <div class="number">21</div>
+
+            <h3>Event Bubbling</h3>
+
+            <p>
+                Demonstrate event bubbling.
+            </p>
+
+            <a
+                href="event-21-bubbling.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 22 -->
+
+        <div class="program-card">
+
+            <div class="number">22</div>
+
+            <h3>Event Capturing</h3>
+
+            <p>
+                Demonstrate event capturing.
+            </p>
+
+            <a
+                href="event-22-capturing.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 23 -->
+
+        <div class="program-card">
+
+            <div class="number">23</div>
+
+            <h3>Event Delegation</h3>
+
+            <p>
+                Demonstrate event delegation.
+            </p>
+
+            <a
+                href="event-23-delegation.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 24 -->
+
+        <div class="program-card">
+
+            <div class="number">24</div>
+
+            <h3>Drag and Drop</h3>
+
+            <p>
+                Create a drag-and-drop application.
+            </p>
+
+            <a
+                href="event-24-drag-drop.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 25 -->
+
+        <div class="program-card">
+
+            <div class="number">25</div>
+
+            <h3>Mouse Coordinate Tracker</h3>
+
+            <p>
+                Track the mouse pointer coordinates.
+            </p>
+
+            <a
+                href="event-25-mouse-coordinates.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 26 -->
+
+        <div class="program-card">
+
+            <div class="number">26</div>
+
+            <h3>Keyboard Controlled Moving Object</h3>
+
+            <p>
+                Control an object using keyboard events.
+            </p>
+
+            <a
+                href="event-26-keyboard-moving-object.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 27 -->
+
+        <div class="program-card">
+
+            <div class="number">27</div>
+
+            <h3>Click Counter</h3>
+
+            <p>
+                Count button clicks using JavaScript.
+            </p>
+
+            <a
+                href="event-27-click-counter.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 28 -->
+
+        <div class="program-card">
+
+            <div class="number">28</div>
+
+            <h3>Double Click Counter</h3>
+
+            <p>
+                Count double-click events.
+            </p>
+
+            <a
+                href="event-28-double-click-counter.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 29 -->
+
+        <div class="program-card">
+
+            <div class="number">29</div>
+
+            <h3>Reaction Time Game</h3>
+
+            <p>
+                Create a simple reaction-time game.
+            </p>
+
+            <a
+                href="event-29-reaction-game.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 30 -->
+
+        <div class="program-card">
+
+            <div class="number">30</div>
+
+            <h3>Keyboard Typing Test</h3>
+
+            <p>
+                Create a simple keyboard typing test.
+            </p>
+
+            <a
+                href="event-30-typing-test.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        <strong>JavaScript Practical Laboratory</strong>
+    </p>
+
+    <p>
+        Events • Mouse • Keyboard • Forms • Interaction
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Counter</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Click Counter</h1><p>Count clicks.</p></header>
+<main class="container">
+<div class="card">
+<button id="b">Click</button><p id="out">0</p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let n=0;b.onclick=()=>out.textContent=++n;
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyboard Key Press Counter</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Keyboard Key Press Counter</h1><p>Count key presses.</p></header>
+<main class="container">
+<div class="card">
+<input id="i"><p>Count: <b id="out">0</b></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let count=0;i.onkeydown=()=>out.textContent=++count;
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Multiple Elements</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Change Multiple Elements</h1><p>Update multiple elements at once.</p></header>
+<main class="container">
+<div class="card">
+<p class="x">One</p><p class="x">Two</p><button onclick="run()">Change</button>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){document.querySelectorAll('.x').forEach(e=>e.textContent='Changed')}
+</script>
+</body>
+</html>

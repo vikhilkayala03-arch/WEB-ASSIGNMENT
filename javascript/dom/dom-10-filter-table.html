@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search and Filter Table</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Search and Filter Table</h1><p>Filter table records.</p></header>
+<main class="container">
+<div class="card">
+<input id="q" oninput="run()" placeholder="Search"><table id="tbl"><tr><td>Apple</td></tr><tr><td>Banana</td></tr><tr><td>Orange</td></tr></table>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let q=document.getElementById('q').value.toLowerCase();[...tbl.rows].forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'':'none')}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sort Table Records</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Sort Table Records</h1><p>Sort simple table rows.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Sort</button><ul id="out"><li>Banana</li><li>Apple</li><li>Orange</li></ul>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){[...out.children].sort((a,b)=>a.textContent.localeCompare(b.textContent)).forEach(x=>out.appendChild(x))}
+</script>
+</body>
+</html>

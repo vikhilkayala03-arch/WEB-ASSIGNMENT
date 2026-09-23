@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Country State City Dropdown</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Country State City Dropdown</h1><p>Demonstrate dependent dropdowns.</p></header>
+<main class="container">
+<div class="card">
+<select id="country" onchange="loadStates()"><option>India</option><option>USA</option></select><select id="state" onchange="loadCities()"></select><select id="city"></select>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+const data={India:{TamilNadu:['Chennai','Madurai'],Telangana:['Hyderabad','Warangal']},USA:{California:['Los Angeles','San Diego'],Texas:['Dallas','Austin']}};function fill(s,a){s.innerHTML='';a.forEach(x=>s.add(new Option(x)))}function loadStates(){fill(state,Object.keys(data[country.value]));loadCities()}function loadCities(){fill(city,data[country.value][state.value]||[])}loadStates();
+</script>
+</body>
+</html>
