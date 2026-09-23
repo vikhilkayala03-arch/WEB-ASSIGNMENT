@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic-Tac-Toe</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Tic-Tac-Toe</h1><p>Simple two-player tic-tac-toe.</p></header>
+<main class="container">
+<div class="card">
+<div id="board" class="board"></div><p id="out"></p><button onclick="reset()">Reset</button>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let cells=Array(9).fill(''),turn='X';function render(){board.innerHTML='';cells.forEach((x,i)=>{let b=document.createElement('button');b.textContent=x;b.onclick=()=>move(i);board.appendChild(b)})}function move(i){if(cells[i])return;cells[i]=turn;turn=turn==='X'?'O':'X';render()}function reset(){cells=Array(9).fill('');turn='X';out.textContent='';render()}render()
+</script>
+</body>
+</html>

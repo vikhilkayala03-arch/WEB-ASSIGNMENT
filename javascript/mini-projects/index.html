@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mini Projects | JavaScript</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            min-height: 100vh;
+
+            color: #374151;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(249, 115, 22, 0.18),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(219, 39, 119, 0.18),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #fff7ed,
+                    #fdf2f8
+                );
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: relative;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 70px 20px 90px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c2410c,
+                    #ea580c,
+                    #db2777,
+                    #9333ea
+                );
+
+            box-shadow:
+                0 12px 35px
+                rgba(219, 39, 119, 0.25);
+        }
+
+
+        header::before,
+        header::after {
+            content: "";
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.13);
+        }
+
+
+        header::before {
+            width: 280px;
+            height: 280px;
+
+            top: -160px;
+            left: -80px;
+        }
+
+
+        header::after {
+            width: 360px;
+            height: 360px;
+
+            right: -150px;
+            bottom: -240px;
+        }
+
+
+        header h1 {
+            position: relative;
+
+            z-index: 1;
+
+            font-size:
+                clamp(38px, 6vw, 58px);
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.18);
+        }
+
+
+        header p {
+            position: relative;
+
+            z-index: 1;
+
+            font-size: 18px;
+
+            color: #fce7f3;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            width: min(1180px, 92%);
+
+            margin:
+                -40px auto
+                55px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .program-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .program-card {
+            position: relative;
+
+            overflow: hidden;
+
+            background: white;
+
+            padding: 25px 22px;
+
+            border-radius: 18px;
+
+            border:
+                1px solid
+                #fce7f3;
+
+            box-shadow:
+                0 10px 28px
+                rgba(190, 24, 93, 0.10);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .program-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #f97316,
+                    #db2777,
+                    #9333ea
+                );
+        }
+
+
+        .program-card:hover {
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 20px 40px
+                rgba(219, 39, 119, 0.18);
+        }
+
+
+        /* =========================
+           NUMBER
+        ========================= */
+
+        .number {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            margin-bottom: 17px;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ea580c,
+                    #db2777
+                );
+
+            box-shadow:
+                0 7px 16px
+                rgba(219, 39, 119, 0.20);
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .program-card h2 {
+            color: #831843;
+
+            font-size: 18px;
+
+            line-height: 1.45;
+
+            min-height: 52px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .open-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            padding:
+                10px 17px;
+
+            border-radius: 9px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ea580c,
+                    #db2777
+                );
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .open-btn::after {
+            content: "→";
+
+            font-size: 17px;
+        }
+
+
+        .open-btn:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 18px
+                rgba(219, 39, 119, 0.30);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #db2777,
+                    #9333ea
+                );
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 40px;
+        }
+
+
+        .nav-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                12px 22px;
+
+            border-radius: 10px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4c1d95,
+                    #7e22ce
+                );
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 8px 20px
+                rgba(126, 34, 206, 0.20);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .nav-btn:hover {
+            transform:
+                translateY(-3px);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ea580c,
+                    #db2777
+                );
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 55px;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            color: #fce7f3;
+
+            background:
+                #18181b;
+
+            border-top:
+                4px solid
+                #db2777;
+        }
+
+
+        footer p {
+            font-size: 15px;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding:
+                    55px 16px
+                    75px;
+            }
+
+
+            header h1 {
+                font-size: 36px;
+            }
+
+
+            header p {
+                font-size: 16px;
+            }
+
+
+            .container {
+                width: 94%;
+
+                margin-top: -28px;
+            }
+
+
+            .program-grid {
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+            }
+
+
+            .program-card {
+                padding:
+                    23px 20px;
+            }
+
+
+            .program-card h2 {
+                min-height: auto;
+            }
+
+
+            .nav {
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+
+            .nav-btn {
+                width: 100%;
+
+                max-width: 280px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <h1>🚀 Mini Projects</h1>
+
+        <p>
+            JavaScript Practical Projects • 17 Projects
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="container">
+
+        <div class="program-grid">
+
+
+            <!-- 01 -->
+
+            <div class="program-card">
+
+                <div class="number">01</div>
+
+                <h2>Digital Calculator</h2>
+
+                <a class="open-btn"
+                   href="digital-calculator.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="program-card">
+
+                <div class="number">02</div>
+
+                <h2>Digital Clock</h2>
+
+                <a class="open-btn"
+                   href="digital-clock.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="program-card">
+
+                <div class="number">03</div>
+
+                <h2>Stopwatch</h2>
+
+                <a class="open-btn"
+                   href="stopwatch.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="program-card">
+
+                <div class="number">04</div>
+
+                <h2>Countdown Timer</h2>
+
+                <a class="open-btn"
+                   href="countdown-timer.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="program-card">
+
+                <div class="number">05</div>
+
+                <h2>To-Do List Application</h2>
+
+                <a class="open-btn"
+                   href="todo-list.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="program-card">
+
+                <div class="number">06</div>
+
+                <h2>Weather Application using API</h2>
+
+                <a class="open-btn"
+                   href="weather-app.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 07 -->
+
+            <div class="program-card">
+
+                <div class="number">07</div>
+
+                <h2>Quiz Application</h2>
+
+                <a class="open-btn"
+                   href="quiz-application.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 08 -->
+
+            <div class="program-card">
+
+                <div class="number">08</div>
+
+                <h2>Number Guessing Game</h2>
+
+                <a class="open-btn"
+                   href="number-guessing-game.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 09 -->
+
+            <div class="program-card">
+
+                <div class="number">09</div>
+
+                <h2>Tic-Tac-Toe</h2>
+
+                <a class="open-btn"
+                   href="tic-tac-toe.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 10 -->
+
+            <div class="program-card">
+
+                <div class="number">10</div>
+
+                <h2>Expense Tracker</h2>
+
+                <a class="open-btn"
+                   href="expense-tracker.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 11 -->
+
+            <div class="program-card">
+
+                <div class="number">11</div>
+
+                <h2>Student Marks/Grade Calculator</h2>
+
+                <a class="open-btn"
+                   href="student-grade-calculator.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 12 -->
+
+            <div class="program-card">
+
+                <div class="number">12</div>
+
+                <h2>Shopping Cart</h2>
+
+                <a class="open-btn"
+                   href="shopping-cart.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 13 -->
+
+            <div class="program-card">
+
+                <div class="number">13</div>
+
+                <h2>Notes Application using localStorage</h2>
+
+                <a class="open-btn"
+                   href="notes-app.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 14 -->
+
+            <div class="program-card">
+
+                <div class="number">14</div>
+
+                <h2>Random Password Generator</h2>
+
+                <a class="open-btn"
+                   href="random-password-generator.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 15 -->
+
+            <div class="program-card">
+
+                <div class="number">15</div>
+
+                <h2>BMI Calculator</h2>
+
+                <a class="open-btn"
+                   href="bmi-calculator.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 16 -->
+
+            <div class="program-card">
+
+                <div class="number">16</div>
+
+                <h2>Currency Converter using API</h2>
+
+                <a class="open-btn"
+                   href="currency-converter.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+            <!-- 17 -->
+
+            <div class="program-card">
+
+                <div class="number">17</div>
+
+                <h2>Interactive Portfolio Website</h2>
+
+                <a class="open-btn"
+                   href="portfolio.html">
+                    Open Project
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav">
+
+            <a class="nav-btn"
+               href="../../index.html">
+
+                ← Home
+
+            </a>
+
+
+            <a class="nav-btn"
+               href="../index.html">
+
+                ← Back to JavaScript
+
+            </a>
+
+        </nav>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            🚀 Mini Projects | JavaScript Practical Lab
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marks, Average and Grade</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Marks, Average and Grade</h1><p>Calculate total, average and grade.</p></header>
+<main class="container">
+<div class="card">
+<input id="m" placeholder="Marks comma separated" value="80,90,70"><button onclick="run()">Calculate</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let a=m.value.split(',').map(Number),t=a.reduce((x,y)=>x+y,0),avg=t/a.length;out.textContent=`Total: ${t}\nAverage: ${avg}\nGrade: ${avg>=90?'A+':avg>=75?'A':avg>=60?'B':'C'}`}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Application using API</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Weather Application using API</h1><p>Fetch sample weather data from an API.</p></header>
+<main class="container">
+<div class="card">
+<input id="city" value="London"><button onclick="run()">Get Weather</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+async function run(){try{let r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&current=temperature_2m');let d=await r.json();out.textContent=`${city.value}\nTemperature: ${d.current.temperature_2m}°C`}catch(e){out.textContent='Unable to fetch weather. Check internet/API access.'}}
+</script>
+</body>
+</html>

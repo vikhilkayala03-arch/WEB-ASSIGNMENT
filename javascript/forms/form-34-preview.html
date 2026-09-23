@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Preview</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Form Preview</h1><p>Preview entered information.</p></header>
+<main class="container">
+<div class="card">
+<input id="n" placeholder="Name" oninput="run()"><input id="c" placeholder="Course" oninput="run()"><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){out.textContent=`Name: ${n.value}\nCourse: ${c.value}`}
+</script>
+</body>
+</html>

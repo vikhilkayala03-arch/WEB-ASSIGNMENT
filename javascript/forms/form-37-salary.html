@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Salary Form</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Employee Salary Form</h1><p>Calculate salary details.</p></header>
+<main class="container">
+<div class="card">
+<input id="basic" type="number" value="30000"><input id="allow" type="number" value="5000"><input id="ded" type="number" value="2000"><button onclick="run()">Calculate</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){out.textContent='Net Salary: '+(+basic.value+ +allow.value- +ded.value)}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Calculator</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Digital Calculator</h1><p>A working calculator.</p></header>
+<main class="container">
+<div class="card">
+<input id="a" type="number" value="10"><select id="op"><option>+</option><option>-</option><option>*</option><option>/</option></select><input id="b" type="number" value="5"><button onclick="run()">Calculate</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let x=+a.value,y=+b.value;out.textContent=({'+':x+y,'-':x-y,'*':x*y,'/':y?x/y:'Error'})[op.value]}
+</script>
+</body>
+</html>

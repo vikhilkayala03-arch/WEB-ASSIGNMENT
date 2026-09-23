@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>BMI Calculator</h1><p>Calculate BMI from height and weight.</p></header>
+<main class="container">
+<div class="card">
+<input id="w" type="number" placeholder="Weight kg"><input id="h" type="number" placeholder="Height cm"><button onclick="run()">Calculate</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let bmi=+w.value/((+h.value/100)**2);out.textContent='BMI: '+bmi.toFixed(2)}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age from Date of Birth</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Age from Date of Birth</h1><p>Calculate age from DOB.</p></header>
+<main class="container">
+<div class="card">
+<input id="dob" type="date"><button onclick="run()">Calculate Age</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let d=new Date(dob.value),n=new Date();let age=n.getFullYear()-d.getFullYear();if(n<new Date(n.getFullYear(),d.getMonth(),d.getDate()))age--;out.textContent='Age: '+age}
+</script>
+</body>
+</html>

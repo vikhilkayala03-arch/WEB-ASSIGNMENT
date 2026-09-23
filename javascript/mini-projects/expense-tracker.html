@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Expense Tracker</h1><p>Add expenses and calculate total.</p></header>
+<main class="container">
+<div class="card">
+<input id="item" placeholder="Item"><input id="amount" type="number" placeholder="Amount"><button onclick="add()">Add</button><ul id="list"></ul><p>Total: <b id="out">0</b></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let total=0;function add(){let li=document.createElement('li');li.textContent=`${item.value}: ₹${amount.value}`;list.appendChild(li);total+=+amount.value;out.textContent=total}
+</script>
+</body>
+</html>

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forms and Validation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f8f7;
+    color:#172033;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+    min-height:50vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #065f46,
+        #059669,
+        #0891b2,
+        #4f46e5
+    );
+
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:19px;
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+.program-count{
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    background:#111827;
+
+    padding:15px;
+
+    text-align:center;
+}
+
+nav a{
+    display:inline-block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:5px 8px;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    background:#047857;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#4f46e5;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:35px;
+
+    margin-bottom:10px;
+
+    color:#064e3b;
+}
+
+.title p{
+    color:#64748b;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   PROGRAM GRID
+========================= */
+
+.program-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+
+/* =========================
+   PROGRAM CARD
+========================= */
+
+.program-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    border:1px solid #dbe5e1;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.program-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #059669,
+        #0891b2,
+        #4f46e5
+    );
+}
+
+.program-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.14);
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.number{
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #059669,
+        #0891b2
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.program-card h3{
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+    color:#064e3b;
+
+    line-height:1.4;
+}
+
+.program-card p{
+
+    color:#64748b;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.open-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+    background:#047857;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+
+    background:#4f46e5;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:60px;
+}
+
+footer p{
+    margin:5px;
+}
+
+footer strong{
+    color:#6ee7b7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    nav a{
+        margin:3px;
+        font-size:13px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    .program-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header>
+
+    <div class="hero">
+
+        <h1>
+            Forms and Validation
+        </h1>
+
+        <p>
+            JavaScript Form Handling & Validation Programs
+        </p>
+
+        <span class="program-count">
+            📝 40 Programs
+        </span>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <a href="../../index.html">
+        🏠 Home
+    </a>
+
+    <a href="../index.html">
+        ← JavaScript
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="container">
+
+
+    <div class="title">
+
+        <h2>
+            Forms & Validation Programs
+        </h2>
+
+        <p>
+            Select any program to view and run the practical
+        </p>
+
+    </div>
+
+
+    <div class="program-grid">
+
+
+        <!-- 01 -->
+
+        <div class="program-card">
+            <div class="number">01</div>
+
+            <h3>Student Registration Form</h3>
+
+            <p>
+                Create and validate a student registration form.
+            </p>
+
+            <a href="form-01-student-registration.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="program-card">
+            <div class="number">02</div>
+
+            <h3>Login Form</h3>
+
+            <p>
+                Validate username and password in a login form.
+            </p>
+
+            <a href="form-02-login.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="program-card">
+            <div class="number">03</div>
+
+            <h3>Name Validation</h3>
+
+            <p>
+                Validate a name field using JavaScript.
+            </p>
+
+            <a href="form-03-name-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="program-card">
+            <div class="number">04</div>
+
+            <h3>Age Validation</h3>
+
+            <p>
+                Validate an age field using JavaScript.
+            </p>
+
+            <a href="form-04-age-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="program-card">
+            <div class="number">05</div>
+
+            <h3>Mobile Phone Validation</h3>
+
+            <p>
+                Validate a mobile phone number.
+            </p>
+
+            <a href="form-05-mobile-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="program-card">
+            <div class="number">06</div>
+
+            <h3>Email Validation</h3>
+
+            <p>
+                Validate an email address using JavaScript.
+            </p>
+
+            <a href="form-06-email-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="program-card">
+            <div class="number">07</div>
+
+            <h3>Minimum Password Length</h3>
+
+            <p>
+                Validate password minimum length.
+            </p>
+
+            <a href="form-07-password-length.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="program-card">
+            <div class="number">08</div>
+
+            <h3>Strong Password Validator</h3>
+
+            <p>
+                Check password strength and requirements.
+            </p>
+
+            <a href="form-08-strong-password.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="program-card">
+            <div class="number">09</div>
+
+            <h3>Password Confirmation</h3>
+
+            <p>
+                Confirm that password fields match.
+            </p>
+
+            <a href="form-09-confirm-password.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="program-card">
+            <div class="number">10</div>
+
+            <h3>Date of Birth Validation</h3>
+
+            <p>
+                Validate a date of birth field.
+            </p>
+
+            <a href="form-10-dob.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="program-card">
+            <div class="number">11</div>
+
+            <h3>Gender Selection</h3>
+
+            <p>
+                Validate gender selection in a form.
+            </p>
+
+            <a href="form-11-gender.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="program-card">
+            <div class="number">12</div>
+
+            <h3>Radio Button Validation</h3>
+
+            <p>
+                Validate radio button selection.
+            </p>
+
+            <a href="form-12-radio-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="program-card">
+            <div class="number">13</div>
+
+            <h3>Checkbox Validation</h3>
+
+            <p>
+                Validate checkbox selection.
+            </p>
+
+            <a href="form-13-checkbox-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="program-card">
+            <div class="number">14</div>
+
+            <h3>Dropdown Validation</h3>
+
+            <p>
+                Validate a dropdown selection.
+            </p>
+
+            <a href="form-14-select-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="program-card">
+            <div class="number">15</div>
+
+            <h3>Textarea Validation</h3>
+
+            <p>
+                Validate textarea input.
+            </p>
+
+            <a href="form-15-textarea-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 16 -->
+
+        <div class="program-card">
+            <div class="number">16</div>
+
+            <h3>Required Field Validation</h3>
+
+            <p>
+                Validate required form fields.
+            </p>
+
+            <a href="form-16-required-fields.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 17 -->
+
+        <div class="program-card">
+            <div class="number">17</div>
+
+            <h3>Dynamic Field Errors</h3>
+
+            <p>
+                Display validation errors dynamically.
+            </p>
+
+            <a href="form-17-field-errors.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 18 -->
+
+        <div class="program-card">
+            <div class="number">18</div>
+
+            <h3>Success Message</h3>
+
+            <p>
+                Display a success message after validation.
+            </p>
+
+            <a href="form-18-success-message.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 19 -->
+
+        <div class="program-card">
+            <div class="number">19</div>
+
+            <h3>Prevent Invalid Submission</h3>
+
+            <p>
+                Prevent form submission when validation fails.
+            </p>
+
+            <a href="form-19-prevent-submit.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 20 -->
+
+        <div class="program-card">
+            <div class="number">20</div>
+
+            <h3>Regular Expression Form</h3>
+
+            <p>
+                Validate form inputs using regular expressions.
+            </p>
+
+            <a href="form-20-regex-form.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 21 -->
+
+        <div class="program-card">
+            <div class="number">21</div>
+
+            <h3>Regex Email Validation</h3>
+
+            <p>
+                Validate an email using a regular expression.
+            </p>
+
+            <a href="form-21-regex-email.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 22 -->
+
+        <div class="program-card">
+            <div class="number">22</div>
+
+            <h3>Regex Phone Validation</h3>
+
+            <p>
+                Validate a phone number using regex.
+            </p>
+
+            <a href="form-22-regex-phone.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 23 -->
+
+        <div class="program-card">
+            <div class="number">23</div>
+
+            <h3>Regex Password Validation</h3>
+
+            <p>
+                Validate password using a regular expression.
+            </p>
+
+            <a href="form-23-regex-password.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 24 -->
+
+        <div class="program-card">
+            <div class="number">24</div>
+
+            <h3>Real-time Form Validation</h3>
+
+            <p>
+                Validate form fields while the user types.
+            </p>
+
+            <a href="form-24-realtime-validation.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 25 -->
+
+        <div class="program-card">
+            <div class="number">25</div>
+
+            <h3>Input Change Focus Blur</h3>
+
+            <p>
+                Demonstrate input, change, focus and blur events.
+            </p>
+
+            <a href="form-25-input-change-focus-blur.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 26 -->
+
+        <div class="program-card">
+            <div class="number">26</div>
+
+            <h3>Password Strength Meter</h3>
+
+            <p>
+                Display password strength dynamically.
+            </p>
+
+            <a href="form-26-password-strength.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 27 -->
+
+        <div class="program-card">
+            <div class="number">27</div>
+
+            <h3>Show Hide Password</h3>
+
+            <p>
+                Create a show and hide password feature.
+            </p>
+
+            <a href="form-27-show-hide-password.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 28 -->
+
+        <div class="program-card">
+            <div class="number">28</div>
+
+            <h3>Registration with Password Confirmation</h3>
+
+            <p>
+                Create registration with password confirmation.
+            </p>
+
+            <a href="form-28-registration-confirm.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 29 -->
+
+        <div class="program-card">
+            <div class="number">29</div>
+
+            <h3>College Admission Form</h3>
+
+            <p>
+                Create a validated college admission form.
+            </p>
+
+            <a href="form-29-college-admission.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 30 -->
+
+        <div class="program-card">
+            <div class="number">30</div>
+
+            <h3>Job Application Form</h3>
+
+            <p>
+                Create and validate a job application form.
+            </p>
+
+            <a href="form-30-job-application.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 31 -->
+
+        <div class="program-card">
+            <div class="number">31</div>
+
+            <h3>Feedback Form</h3>
+
+            <p>
+                Create a validated feedback form.
+            </p>
+
+            <a href="form-31-feedback.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 32 -->
+
+        <div class="program-card">
+            <div class="number">32</div>
+
+            <h3>Contact Form</h3>
+
+            <p>
+                Create and validate a contact form.
+            </p>
+
+            <a href="form-32-contact.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 33 -->
+
+        <div class="program-card">
+            <div class="number">33</div>
+
+            <h3>Multi-step Registration Form</h3>
+
+            <p>
+                Create a multi-step registration form.
+            </p>
+
+            <a href="form-33-multistep.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 34 -->
+
+        <div class="program-card">
+            <div class="number">34</div>
+
+            <h3>Form Preview</h3>
+
+            <p>
+                Preview entered information before submission.
+            </p>
+
+            <a href="form-34-preview.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 35 -->
+
+        <div class="program-card">
+            <div class="number">35</div>
+
+            <h3>Age from Date of Birth</h3>
+
+            <p>
+                Calculate age from date of birth.
+            </p>
+
+            <a href="form-35-age-from-dob.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 36 -->
+
+        <div class="program-card">
+            <div class="number">36</div>
+
+            <h3>Marks, Average and Grade</h3>
+
+            <p>
+                Calculate total, average and grade.
+            </p>
+
+            <a href="form-36-marks-grade.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 37 -->
+
+        <div class="program-card">
+            <div class="number">37</div>
+
+            <h3>Employee Salary Form</h3>
+
+            <p>
+                Calculate employee salary details.
+            </p>
+
+            <a href="form-37-salary.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 38 -->
+
+        <div class="program-card">
+            <div class="number">38</div>
+
+            <h3>Shopping Order Form</h3>
+
+            <p>
+                Calculate the total price of a shopping order.
+            </p>
+
+            <a href="form-38-shopping-order.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 39 -->
+
+        <div class="program-card">
+            <div class="number">39</div>
+
+            <h3>Dynamic Fields</h3>
+
+            <p>
+                Create form fields dynamically based on selection.
+            </p>
+
+            <a href="form-39-dynamic-fields.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+        <!-- 40 -->
+
+        <div class="program-card">
+            <div class="number">40</div>
+
+            <h3>Validation Without Reload</h3>
+
+            <p>
+                Validate input and display errors without reloading.
+            </p>
+
+            <a href="form-40-validation-no-reload.html" class="open-btn">
+                Open Program →
+            </a>
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        <strong>JavaScript Practical Laboratory</strong>
+    </p>
+
+    <p>
+        Forms • Validation • Regular Expressions • User Input
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

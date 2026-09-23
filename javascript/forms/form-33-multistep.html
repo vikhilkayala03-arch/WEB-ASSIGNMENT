@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-step Registration Form</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Multi-step Registration Form</h1><p>Demonstrate a multi-step form.</p></header>
+<main class="container">
+<div class="card">
+<div id="step1"><input id="n" placeholder="Name"><button onclick="next()">Next</button></div><div id="step2" hidden><input id="c" placeholder="Course"><button onclick="finish()">Finish</button></div><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function next(){step1.hidden=true;step2.hidden=false}function finish(){out.textContent=`Registered ${n.value} for ${c.value}`}
+</script>
+</body>
+</html>
