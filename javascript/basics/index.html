@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JavaScript Programs</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+    min-height:50vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4c1d95,
+        #7e22ce,
+        #c026d3,
+        #db2777
+    );
+
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:19px;
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+.program-count{
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    background:#111827;
+
+    padding:15px;
+
+    text-align:center;
+}
+
+nav a{
+    display:inline-block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:5px 8px;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    background:#4c1d95;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#db2777;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:35px;
+
+    margin-bottom:10px;
+
+    color:#1e1b4b;
+}
+
+.title p{
+    color:#64748b;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   PROGRAM GRID
+========================= */
+
+.program-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+
+/* =========================
+   PROGRAM CARD
+========================= */
+
+.program-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    border:1px solid #e5e7eb;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.program-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #7e22ce,
+        #db2777
+    );
+}
+
+.program-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.14);
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.number{
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7e22ce,
+        #db2777
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.program-card h3{
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+    color:#1e1b4b;
+
+    line-height:1.4;
+}
+
+.program-card p{
+
+    color:#64748b;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.open-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+    background:#4c1d95;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+
+    background:#db2777;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:60px;
+}
+
+footer p{
+    margin:5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    nav a{
+        margin:3px;
+        font-size:13px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    .program-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HERO ================= -->
+
+<header>
+
+    <div class="hero">
+
+        <h1>JavaScript Programs</h1>
+
+        <p>
+            JavaScript Practical Laboratory
+        </p>
+
+        <span class="program-count">
+            ⚡ 67 Programs
+        </span>
+
+    </div>
+
+</header>
+
+
+<!-- ================= NAV ================= -->
+
+<nav>
+
+    <a href="../../index.html">
+        🏠 Home
+    </a>
+
+    <a href="../index.html">
+        ← JavaScript
+    </a>
+
+</nav>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <div class="title">
+
+        <h2>
+            JavaScript Practical Programs
+        </h2>
+
+        <p>
+            Select any program to view the code
+        </p>
+
+    </div>
+
+
+    <div class="program-grid">
+
+
+        <!-- 38 -->
+
+        <div class="program-card">
+
+            <div class="number">38</div>
+
+            <h3>
+                ES6 let, const, Template Literals and Destructuring
+            </h3>
+
+            <p>
+                Demonstrate modern ES6 JavaScript features.
+            </p>
+
+            <a
+                href="js-38-es6-let-const-template-destructuring.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 39 -->
+
+        <div class="program-card">
+
+            <div class="number">39</div>
+
+            <h3>
+                Spread and Rest Operators
+            </h3>
+
+            <p>
+                Demonstrate spread and rest operators.
+            </p>
+
+            <a
+                href="js-39-spread-rest.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 40 -->
+
+        <div class="program-card">
+
+            <div class="number">40</div>
+
+            <h3>
+                Classes and Objects
+            </h3>
+
+            <p>
+                Demonstrate classes and objects in JavaScript.
+            </p>
+
+            <a
+                href="js-40-classes-objects.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 41 -->
+
+        <div class="program-card">
+
+            <div class="number">41</div>
+
+            <h3>
+                Inheritance
+            </h3>
+
+            <p>
+                Demonstrate inheritance using JavaScript classes.
+            </p>
+
+            <a
+                href="js-41-inheritance.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 42 -->
+
+        <div class="program-card">
+
+            <div class="number">42</div>
+
+            <h3>
+                Callbacks, Promises and Async/Await
+            </h3>
+
+            <p>
+                Demonstrate asynchronous JavaScript concepts.
+            </p>
+
+            <a
+                href="js-42-callbacks-promises-async.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 43 -->
+
+        <div class="program-card">
+
+            <div class="number">43</div>
+
+            <h3>
+                Fetch API
+            </h3>
+
+            <p>
+                Fetch and process data using the Fetch API.
+            </p>
+
+            <a
+                href="js-43-fetch-api.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 44 -->
+
+        <div class="program-card">
+
+            <div class="number">44</div>
+
+            <h3>
+                Display API Data Dynamically
+            </h3>
+
+            <p>
+                Display fetched API data dynamically.
+            </p>
+
+            <a
+                href="js-44-display-api-data.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 45 -->
+
+        <div class="program-card">
+
+            <div class="number">45</div>
+
+            <h3>
+                localStorage
+            </h3>
+
+            <p>
+                Store and retrieve browser data using localStorage.
+            </p>
+
+            <a
+                href="js-45-localstorage.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 46 -->
+
+        <div class="program-card">
+
+            <div class="number">46</div>
+
+            <h3>
+                Responsive Login Form
+            </h3>
+
+            <p>
+                Create a responsive login form with validation.
+            </p>
+
+            <a
+                href="js-46-responsive-login.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 47 -->
+
+        <div class="program-card">
+
+            <div class="number">47</div>
+
+            <h3>
+                Complete Interactive Webpage
+            </h3>
+
+            <p>
+                Build an interactive webpage using JavaScript.
+            </p>
+
+            <a
+                href="js-47-interactive-webpage.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 48 -->
+
+        <div class="program-card">
+
+            <div class="number">48</div>
+
+            <h3>
+                Swap Two Numbers
+            </h3>
+
+            <p>
+                JavaScript program to swap two numbers.
+            </p>
+
+            <a
+                href="js-48-swap-two-numbers.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 49 -->
+
+        <div class="program-card">
+
+            <div class="number">49</div>
+
+            <h3>
+                Greatest Common Divisor (GCD)
+            </h3>
+
+            <p>
+                Find the GCD of two numbers.
+            </p>
+
+            <a
+                href="js-49-gcd.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 50 -->
+
+        <div class="program-card">
+
+            <div class="number">50</div>
+
+            <h3>
+                Least Common Multiple (LCM)
+            </h3>
+
+            <p>
+                Find the LCM of two numbers.
+            </p>
+
+            <a
+                href="js-50-lcm.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 51 -->
+
+        <div class="program-card">
+
+            <div class="number">51</div>
+
+            <h3>
+                Armstrong Number
+            </h3>
+
+            <p>
+                Check whether a number is an Armstrong number.
+            </p>
+
+            <a
+                href="js-51-armstrong.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 52 -->
+
+        <div class="program-card">
+
+            <div class="number">52</div>
+
+            <h3>
+                Perfect Number
+            </h3>
+
+            <p>
+                Check whether a number is a perfect number.
+            </p>
+
+            <a
+                href="js-52-perfect-number.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 53 -->
+
+        <div class="program-card">
+
+            <div class="number">53</div>
+
+            <h3>
+                Multiplication Table
+            </h3>
+
+            <p>
+                Generate the multiplication table of a number.
+            </p>
+
+            <a
+                href="js-53-multiplication-table.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 54 -->
+
+        <div class="program-card">
+
+            <div class="number">54</div>
+
+            <h3>
+                Power of a Number
+            </h3>
+
+            <p>
+                Calculate the power of a given number.
+            </p>
+
+            <a
+                href="js-54-power.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 55 -->
+
+        <div class="program-card">
+
+            <div class="number">55</div>
+
+            <h3>
+                Count Number of Digits
+            </h3>
+
+            <p>
+                Count the number of digits in a number.
+            </p>
+
+            <a
+                href="js-55-count-digits.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 56 -->
+
+        <div class="program-card">
+
+            <div class="number">56</div>
+
+            <h3>
+                Second-Largest Element
+            </h3>
+
+            <p>
+                Find the second-largest element in an array.
+            </p>
+
+            <a
+                href="js-56-second-largest.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 57 -->
+
+        <div class="program-card">
+
+            <div class="number">57</div>
+
+            <h3>
+                Remove Duplicate Array Elements
+            </h3>
+
+            <p>
+                Remove duplicate values from an array.
+            </p>
+
+            <a
+                href="js-57-remove-duplicates.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 58 -->
+
+        <div class="program-card">
+
+            <div class="number">58</div>
+
+            <h3>
+                Merge Two Arrays
+            </h3>
+
+            <p>
+                Merge two JavaScript arrays.
+            </p>
+
+            <a
+                href="js-58-merge-arrays.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 59 -->
+
+        <div class="program-card">
+
+            <div class="number">59</div>
+
+            <h3>
+                Frequency of Array Elements
+            </h3>
+
+            <p>
+                Find the frequency of elements in an array.
+            </p>
+
+            <a
+                href="js-59-array-frequency.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 60 -->
+
+        <div class="program-card">
+
+            <div class="number">60</div>
+
+            <h3>
+                Common Elements in Two Arrays
+            </h3>
+
+            <p>
+                Find common elements between two arrays.
+            </p>
+
+            <a
+                href="js-60-common-array-elements.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 61 -->
+
+        <div class="program-card">
+
+            <div class="number">61</div>
+
+            <h3>
+                Reverse a String
+            </h3>
+
+            <p>
+                Reverse a given string using JavaScript.
+            </p>
+
+            <a
+                href="js-61-reverse-string.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 62 -->
+
+        <div class="program-card">
+
+            <div class="number">62</div>
+
+            <h3>
+                String Palindrome
+            </h3>
+
+            <p>
+                Check whether a string is a palindrome.
+            </p>
+
+            <a
+                href="js-62-string-palindrome.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 63 -->
+
+        <div class="program-card">
+
+            <div class="number">63</div>
+
+            <h3>
+                Count Vowels and Consonants
+            </h3>
+
+            <p>
+                Count vowels and consonants in a string.
+            </p>
+
+            <a
+                href="js-63-vowels-consonants.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 64 -->
+
+        <div class="program-card">
+
+            <div class="number">64</div>
+
+            <h3>
+                Count Words in a String
+            </h3>
+
+            <p>
+                Count the number of words in a string.
+            </p>
+
+            <a
+                href="js-64-count-words.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 65 -->
+
+        <div class="program-card">
+
+            <div class="number">65</div>
+
+            <h3>
+                Character Frequency
+            </h3>
+
+            <p>
+                Find the frequency of characters in a string.
+            </p>
+
+            <a
+                href="js-65-character-frequency.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 66 -->
+
+        <div class="program-card">
+
+            <div class="number">66</div>
+
+            <h3>
+                Regular Expressions
+            </h3>
+
+            <p>
+                Demonstrate regular expressions in JavaScript.
+            </p>
+
+            <a
+                href="js-66-regex.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 67 -->
+
+        <div class="program-card">
+
+            <div class="number">67</div>
+
+            <h3>
+                Email Validation with Regular Expression
+            </h3>
+
+            <p>
+                Validate an email using regular expressions.
+            </p>
+
+            <a
+                href="js-67-email-regex.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 01 -->
+
+        <div class="program-card">
+
+            <div class="number">01</div>
+
+            <h3>Hello World</h3>
+
+            <p>
+                Display Hello World using JavaScript.
+            </p>
+
+            <a
+                href="js-01-hello-world.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="program-card">
+
+            <div class="number">02</div>
+
+            <h3>Arithmetic Operations</h3>
+
+            <p>
+                Perform arithmetic operations using JavaScript.
+            </p>
+
+            <a
+                href="js-02-arithmetic.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="program-card">
+
+            <div class="number">03</div>
+
+            <h3>Largest of Three Numbers</h3>
+
+            <p>
+                Find the largest among three numbers.
+            </p>
+
+            <a
+                href="js-03-largest-three.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="program-card">
+
+            <div class="number">04</div>
+
+            <h3>Even or Odd</h3>
+
+            <p>
+                Check whether a number is even or odd.
+            </p>
+
+            <a
+                href="js-04-even-odd.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="program-card">
+
+            <div class="number">05</div>
+
+            <h3>Positive, Negative or Zero</h3>
+
+            <p>
+                Check the type of a given number.
+            </p>
+
+            <a
+                href="js-05-positive-negative-zero.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="program-card">
+
+            <div class="number">06</div>
+
+            <h3>Factorial</h3>
+
+            <p>
+                Calculate the factorial of a number.
+            </p>
+
+            <a
+                href="js-06-factorial.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="program-card">
+
+            <div class="number">07</div>
+
+            <h3>Fibonacci Series</h3>
+
+            <p>
+                Generate the Fibonacci series.
+            </p>
+
+            <a
+                href="js-07-fibonacci.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="program-card">
+
+            <div class="number">08</div>
+
+            <h3>Prime Number</h3>
+
+            <p>
+                Check whether a number is prime.
+            </p>
+
+            <a
+                href="js-08-prime.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="program-card">
+
+            <div class="number">09</div>
+
+            <h3>Number Palindrome</h3>
+
+            <p>
+                Check whether a number is a palindrome.
+            </p>
+
+            <a
+                href="js-09-palindrome-number.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="program-card">
+
+            <div class="number">10</div>
+
+            <h3>Reverse a Number</h3>
+
+            <p>
+                Reverse the digits of a number.
+            </p>
+
+            <a
+                href="js-10-reverse-number.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="program-card">
+
+            <div class="number">11</div>
+
+            <h3>Sum of Digits</h3>
+
+            <p>
+                Find the sum of digits of a number.
+            </p>
+
+            <a
+                href="js-11-sum-digits.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="program-card">
+
+            <div class="number">12</div>
+
+            <h3>Largest and Smallest in Array</h3>
+
+            <p>
+                Find largest and smallest array elements.
+            </p>
+
+            <a
+                href="js-12-array-largest-smallest.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="program-card">
+
+            <div class="number">13</div>
+
+            <h3>Sort an Array</h3>
+
+            <p>
+                Sort array elements using JavaScript.
+            </p>
+
+            <a
+                href="js-13-array-sort.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="program-card">
+
+            <div class="number">14</div>
+
+            <h3>Array Sum and Average</h3>
+
+            <p>
+                Calculate sum and average of array elements.
+            </p>
+
+            <a
+                href="js-14-array-sum-average.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="program-card">
+
+            <div class="number">15</div>
+
+            <h3>JavaScript Functions</h3>
+
+            <p>
+                Demonstrate JavaScript functions.
+            </p>
+
+            <a
+                href="js-15-functions.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 16 -->
+
+        <div class="program-card">
+
+            <div class="number">16</div>
+
+            <h3>Arrow Functions</h3>
+
+            <p>
+                Demonstrate arrow functions.
+            </p>
+
+            <a
+                href="js-16-arrow-functions.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 17 -->
+
+        <div class="program-card">
+
+            <div class="number">17</div>
+
+            <h3>Strings and String Methods</h3>
+
+            <p>
+                Demonstrate strings and string methods.
+            </p>
+
+            <a
+                href="js-17-strings-methods.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 18 -->
+
+        <div class="program-card">
+
+            <div class="number">18</div>
+
+            <h3>Arrays and Array Methods</h3>
+
+            <p>
+                Demonstrate arrays and array methods.
+            </p>
+
+            <a
+                href="js-18-arrays-methods.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 19 -->
+
+        <div class="program-card">
+
+            <div class="number">19</div>
+
+            <h3>Objects in JavaScript</h3>
+
+            <p>
+                Demonstrate JavaScript objects.
+            </p>
+
+            <a
+                href="js-19-objects.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 20 -->
+
+        <div class="program-card">
+
+            <div class="number">20</div>
+
+            <h3>Date and Math Objects</h3>
+
+            <p>
+                Demonstrate Date and Math objects.
+            </p>
+
+            <a
+                href="js-20-date-math.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 21 -->
+
+        <div class="program-card">
+
+            <div class="number">21</div>
+
+            <h3>DOM & Event-Based Experiments</h3>
+
+            <p>
+                Introduction to DOM and events.
+            </p>
+
+            <a
+                href="js-21-dom-event-intro.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 22 -->
+
+        <div class="program-card">
+
+            <div class="number">22</div>
+
+            <h3>Change Text</h3>
+
+            <p>
+                Change webpage text using JavaScript.
+            </p>
+
+            <a
+                href="js-22-change-text.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 23 -->
+
+        <div class="program-card">
+
+            <div class="number">23</div>
+
+            <h3>Change Background Color</h3>
+
+            <p>
+                Change webpage background color.
+            </p>
+
+            <a
+                href="js-23-change-background.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 24 -->
+
+        <div class="program-card">
+
+            <div class="number">24</div>
+
+            <h3>Button Click Event</h3>
+
+            <p>
+                Create a button click event.
+            </p>
+
+            <a
+                href="js-24-button-click.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 25 -->
+
+        <div class="program-card">
+
+            <div class="number">25</div>
+
+            <h3>Show and Hide Element</h3>
+
+            <p>
+                Show or hide an HTML element.
+            </p>
+
+            <a
+                href="js-25-show-hide.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 26 -->
+
+        <div class="program-card">
+
+            <div class="number">26</div>
+
+            <h3>Change Image on Button Click</h3>
+
+            <p>
+                Change an image using a button.
+            </p>
+
+            <a
+                href="js-26-change-image.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 27 -->
+
+        <div class="program-card">
+
+            <div class="number">27</div>
+
+            <h3>Digital Clock</h3>
+
+            <p>
+                Create a digital clock using JavaScript.
+            </p>
+
+            <a
+                href="js-27-digital-clock.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 28 -->
+
+        <div class="program-card">
+
+            <div class="number">28</div>
+
+            <h3>Simple Calculator</h3>
+
+            <p>
+                Create a simple calculator.
+            </p>
+
+            <a
+                href="js-28-simple-calculator.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 29 -->
+
+        <div class="program-card">
+
+            <div class="number">29</div>
+
+            <h3>Number Guessing Game</h3>
+
+            <p>
+                Create a number guessing game.
+            </p>
+
+            <a
+                href="js-29-number-guessing.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 30 -->
+
+        <div class="program-card">
+
+            <div class="number">30</div>
+
+            <h3>Form Validation</h3>
+
+            <p>
+                Validate form inputs using JavaScript.
+            </p>
+
+            <a
+                href="js-30-form-validation.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 31 -->
+
+        <div class="program-card">
+
+            <div class="number">31</div>
+
+            <h3>Validate Name Email Phone Password</h3>
+
+            <p>
+                Validate common form fields.
+            </p>
+
+            <a
+                href="js-31-validate-fields.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 32 -->
+
+        <div class="program-card">
+
+            <div class="number">32</div>
+
+            <h3>To-Do List</h3>
+
+            <p>
+                Create a simple to-do list.
+            </p>
+
+            <a
+                href="js-32-todo-list.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 33 -->
+
+        <div class="program-card">
+
+            <div class="number">33</div>
+
+            <h3>Quiz Application</h3>
+
+            <p>
+                Create a simple quiz application.
+            </p>
+
+            <a
+                href="js-33-quiz.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 34 -->
+
+        <div class="program-card">
+
+            <div class="number">34</div>
+
+            <h3>Counter Application</h3>
+
+            <p>
+                Create an increment and decrement counter.
+            </p>
+
+            <a
+                href="js-34-counter.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 35 -->
+
+        <div class="program-card">
+
+            <div class="number">35</div>
+
+            <h3>Stopwatch</h3>
+
+            <p>
+                Create a stopwatch using JavaScript.
+            </p>
+
+            <a
+                href="js-35-stopwatch.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 36 -->
+
+        <div class="program-card">
+
+            <div class="number">36</div>
+
+            <h3>Countdown Timer</h3>
+
+            <p>
+                Create a countdown timer.
+            </p>
+
+            <a
+                href="js-36-countdown.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 37 -->
+
+        <div class="program-card">
+
+            <div class="number">37</div>
+
+            <h3>Advanced JavaScript Lab Questions</h3>
+
+            <p>
+                Advanced JavaScript practical questions.
+            </p>
+
+            <a
+                href="js-37-advanced-lab.html"
+                class="open-btn">
+                Open Program →
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>JavaScript Practical Laboratory</strong>
+    </p>
+
+    <p>
+        JavaScript • DOM • Events • Forms • Browser • Storage
+    </p>
+
+</footer>
+
+
+</body>
+</html>

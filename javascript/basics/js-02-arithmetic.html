@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arithmetic Operations</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Arithmetic Operations</h1><p>Perform basic arithmetic operations.</p></header>
+<main class="container">
+<div class="card">
+<input id="a" type="number" placeholder="First number"><input id="b" type="number" placeholder="Second number"><button onclick="calc()">Calculate</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function calc(){let a=+document.getElementById('a').value,b=+document.getElementById('b').value;document.getElementById('out').textContent=`Sum: ${a+b}\nDifference: ${a-b}\nProduct: ${a*b}\nQuotient: ${b? a/b:'undefined'}`;}
+</script>
+</body>
+</html>

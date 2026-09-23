@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Sum and Average</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Array Sum and Average</h1><p>Calculate sum and average.</p></header>
+<main class="container">
+<div class="card">
+<input id="arr" value="10,20,30,40"><button onclick="run()">Calculate</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let a=arr.value.split(',').map(Number),s=a.reduce((x,y)=>x+y,0);out.textContent=`Sum: ${s}\nAverage: ${s/a.length}`;}
+</script>
+</body>
+</html>

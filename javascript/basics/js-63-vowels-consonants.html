@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Count Vowels and Consonants</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Count Vowels and Consonants</h1><p>Demonstrate Count Vowels and Consonants.</p></header>
+<main class="container">
+<div class="card">
+<input id="a" value="12"><input id="b" value="8"><button onclick="run()">Run</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let s=a.value.toLowerCase(),v=[...s].filter(x=>'aeiou'.includes(x)).length,c=[...s].filter(x=>/[a-z]/.test(x)&&!'aeiou'.includes(x)).length;out.textContent=`Vowels: ${v}\nConsonants: ${c}`}
+</script>
+</body>
+</html>

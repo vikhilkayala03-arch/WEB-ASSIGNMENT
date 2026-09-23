@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Callbacks, Promises and Async/Await</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Callbacks, Promises and Async/Await</h1><p>Demonstrate Callbacks, Promises and Async/Await.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Run</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+const wait=()=>new Promise(r=>setTimeout(()=>r('Promise resolved'),500));async function run(){out.textContent='Callback ready';out.textContent+='\n'+await wait()}
+</script>
+</body>
+</html>

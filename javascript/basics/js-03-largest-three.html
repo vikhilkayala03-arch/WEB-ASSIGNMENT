@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Largest of Three Numbers</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Largest of Three Numbers</h1><p>Find the largest of three numbers.</p></header>
+<main class="container">
+<div class="card">
+<input id="a" type="number"><input id="b" type="number"><input id="c" type="number"><button onclick="run()">Find Largest</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let v=[+a.value,+b.value,+c.value];out.textContent='Largest: '+Math.max(...v);}
+</script>
+</body>
+</html>

@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Browser Objects & Browser Features</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+header{
+    min-height:50vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f766e,
+        #0891b2,
+        #2563eb,
+        #4f46e5
+    );
+
+    color:white;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:19px;
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+.program-count{
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    background:#111827;
+
+    padding:15px;
+
+    text-align:center;
+}
+
+nav a{
+    display:inline-block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:5px 8px;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    background:#0f766e;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#06b6d4;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:90%;
+
+    max-width:1200px;
+
+    margin:60px auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:34px;
+
+    margin-bottom:10px;
+
+    color:#0f172a;
+}
+
+.title p{
+    color:#64748b;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   PROGRAM GRID
+========================= */
+
+.program-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+
+/* =========================
+   PROGRAM CARD
+========================= */
+
+.program-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    border:1px solid #e2e8f0;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.program-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0f766e,
+        #0891b2,
+        #2563eb
+    );
+}
+
+.program-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.14);
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.number{
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f766e,
+        #2563eb
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.program-card h3{
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+    color:#0f172a;
+
+    line-height:1.4;
+}
+
+.program-card p{
+
+    color:#64748b;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.open-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+    background:#0f766e;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+
+    background:#2563eb;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:60px;
+}
+
+footer p{
+    margin:5px;
+}
+
+footer strong{
+    color:#67e8f9;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    nav a{
+        margin:3px;
+
+        font-size:13px;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    .program-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header>
+
+    <div class="hero">
+
+        <h1>
+            Browser Objects & Browser Features
+        </h1>
+
+        <p>
+            Explore JavaScript Browser APIs & Features
+        </p>
+
+        <span class="program-count">
+            🌐 20 Programs
+        </span>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <a href="../../index.html">
+        🏠 Home
+    </a>
+
+    <a href="../index.html">
+        ← JavaScript
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="container">
+
+
+    <div class="title">
+
+        <h2>
+            Browser Programs
+        </h2>
+
+        <p>
+            Select any program to view and run the practical
+        </p>
+
+    </div>
+
+
+    <div class="program-grid">
+
+
+        <!-- 01 -->
+
+        <div class="program-card">
+
+            <div class="number">01</div>
+
+            <h3>
+                Window Object
+            </h3>
+
+            <p>
+                Demonstrate the JavaScript Window object.
+            </p>
+
+            <a
+                href="browser-01-window.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="program-card">
+
+            <div class="number">02</div>
+
+            <h3>
+                alert confirm prompt
+            </h3>
+
+            <p>
+                Demonstrate alert, confirm and prompt methods.
+            </p>
+
+            <a
+                href="browser-02-alert-confirm-prompt.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="program-card">
+
+            <div class="number">03</div>
+
+            <h3>
+                setTimeout
+            </h3>
+
+            <p>
+                Demonstrate delayed execution using setTimeout.
+            </p>
+
+            <a
+                href="browser-03-settimeout.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="program-card">
+
+            <div class="number">04</div>
+
+            <h3>
+                setInterval
+            </h3>
+
+            <p>
+                Demonstrate repeated execution using setInterval.
+            </p>
+
+            <a
+                href="browser-04-setinterval.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="program-card">
+
+            <div class="number">05</div>
+
+            <h3>
+                Digital Clock using setInterval
+            </h3>
+
+            <p>
+                Create a digital clock using setInterval.
+            </p>
+
+            <a
+                href="browser-05-digital-clock.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="program-card">
+
+            <div class="number">06</div>
+
+            <h3>
+                Countdown Timer
+            </h3>
+
+            <p>
+                Create a countdown timer using JavaScript.
+            </p>
+
+            <a
+                href="browser-06-countdown.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="program-card">
+
+            <div class="number">07</div>
+
+            <h3>
+                Stopwatch
+            </h3>
+
+            <p>
+                Create a stopwatch using JavaScript.
+            </p>
+
+            <a
+                href="browser-07-stopwatch.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="program-card">
+
+            <div class="number">08</div>
+
+            <h3>
+                Location Object
+            </h3>
+
+            <p>
+                Demonstrate the browser Location object.
+            </p>
+
+            <a
+                href="browser-08-location.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="program-card">
+
+            <div class="number">09</div>
+
+            <h3>
+                Redirect Webpage
+            </h3>
+
+            <p>
+                Redirect the user to another webpage.
+            </p>
+
+            <a
+                href="browser-09-redirect.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="program-card">
+
+            <div class="number">10</div>
+
+            <h3>
+                Current Webpage URL
+            </h3>
+
+            <p>
+                Display the current webpage URL.
+            </p>
+
+            <a
+                href="browser-10-current-url.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="program-card">
+
+            <div class="number">11</div>
+
+            <h3>
+                History Object
+            </h3>
+
+            <p>
+                Demonstrate the browser History object.
+            </p>
+
+            <a
+                href="browser-11-history.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="program-card">
+
+            <div class="number">12</div>
+
+            <h3>
+                Back Forward Reload
+            </h3>
+
+            <p>
+                Create browser navigation controls.
+            </p>
+
+            <a
+                href="browser-12-history-controls.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="program-card">
+
+            <div class="number">13</div>
+
+            <h3>
+                Navigator Object
+            </h3>
+
+            <p>
+                Demonstrate the JavaScript Navigator object.
+            </p>
+
+            <a
+                href="browser-13-navigator.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="program-card">
+
+            <div class="number">14</div>
+
+            <h3>
+                Browser Information
+            </h3>
+
+            <p>
+                Display browser information using JavaScript.
+            </p>
+
+            <a
+                href="browser-14-browser-info.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="program-card">
+
+            <div class="number">15</div>
+
+            <h3>
+                Screen Width and Height
+            </h3>
+
+            <p>
+                Display the user's screen dimensions.
+            </p>
+
+            <a
+                href="browser-15-screen-size.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 16 -->
+
+        <div class="program-card">
+
+            <div class="number">16</div>
+
+            <h3>
+                Online or Offline Detection
+            </h3>
+
+            <p>
+                Detect whether the browser is online or offline.
+            </p>
+
+            <a
+                href="browser-16-online-offline.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 17 -->
+
+        <div class="program-card">
+
+            <div class="number">17</div>
+
+            <h3>
+                Browser Language
+            </h3>
+
+            <p>
+                Display the current browser language.
+            </p>
+
+            <a
+                href="browser-17-browser-language.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 18 -->
+
+        <div class="program-card">
+
+            <div class="number">18</div>
+
+            <h3>
+                Browser Geolocation
+            </h3>
+
+            <p>
+                Demonstrate browser geolocation features.
+            </p>
+
+            <a
+                href="browser-18-geolocation.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 19 -->
+
+        <div class="program-card">
+
+            <div class="number">19</div>
+
+            <h3>
+                Geographical Coordinates
+            </h3>
+
+            <p>
+                Display geographical coordinates using JavaScript.
+            </p>
+
+            <a
+                href="browser-19-coordinates.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+        <!-- 20 -->
+
+        <div class="program-card">
+
+            <div class="number">20</div>
+
+            <h3>
+                Online/Offline Updating Page
+            </h3>
+
+            <p>
+                Update webpage information when network status changes.
+            </p>
+
+            <a
+                href="browser-20-online-offline-update.html"
+                class="open-btn">
+
+                Open Program →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        <strong>JavaScript Practical Laboratory</strong>
+    </p>
+
+    <p>
+        Browser Objects • Browser APIs • JavaScript
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

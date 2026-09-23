@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>alert confirm prompt</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>alert confirm prompt</h1><p>Demonstrate browser dialog methods.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Run Dialogs</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){alert('Hello');let ok=confirm('Continue?');let n=prompt('Enter your name');out.textContent=`Confirmed: ${ok}; Name: ${n}`;}
+</script>
+</body>
+</html>

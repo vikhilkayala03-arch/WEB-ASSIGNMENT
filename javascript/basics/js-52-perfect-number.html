@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfect Number</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Perfect Number</h1><p>Demonstrate Perfect Number.</p></header>
+<main class="container">
+<div class="card">
+<input id="a" value="12"><input id="b" value="8"><button onclick="run()">Run</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let n=+a.value,s=0;for(let i=1;i<n;i++)if(n%i===0)s+=i;out.textContent=s===n?'Perfect':'Not Perfect'}
+</script>
+</body>
+</html>

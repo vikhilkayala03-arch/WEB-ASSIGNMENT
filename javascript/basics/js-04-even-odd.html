@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Even or Odd</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Even or Odd</h1><p>Check whether a number is even or odd.</p></header>
+<main class="container">
+<div class="card">
+<input id="n" type="number"><button onclick="run()">Check</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let n=+document.getElementById('n').value;out.textContent=n%2===0?'Even':'Odd';}
+</script>
+</body>
+</html>

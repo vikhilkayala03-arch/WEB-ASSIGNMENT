@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sort an Array</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Sort an Array</h1><p>Sort numeric array in ascending order.</p></header>
+<main class="container">
+<div class="card">
+<input id="arr" value="5,2,9,1,7"><button onclick="run()">Sort</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let a=arr.value.split(',').map(Number).sort((x,y)=>x-y);out.textContent=a.join(', ');}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate Name Email Phone Password</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Validate Name Email Phone Password</h1><p>Validate multiple fields</p></header>
+<main class="container">
+<div class="card">
+<input id="name" placeholder="Name"><input id="email" placeholder="Email"><input id="phone" placeholder="Phone"><input id="pass" type="password" placeholder="Password"><button onclick="run()">Validate</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let ok=/^[A-Za-z ]+$/.test(name.value),em=/^[^ ]+@[^ ]+\.[^ ]+$/.test(email.value),ph=/^\d{10}$/.test(phone.value),pa=pass.value.length>=6;out.textContent=`Name: ${ok}\nEmail: ${em}\nPhone: ${ph}\nPassword: ${pa}`;}
+</script>
+</body>
+</html>

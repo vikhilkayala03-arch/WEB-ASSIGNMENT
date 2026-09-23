@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positive, Negative or Zero</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Positive, Negative or Zero</h1><p>Classify a number.</p></header>
+<main class="container">
+<div class="card">
+<input id="n" type="number"><button onclick="run()">Check</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let n=+document.getElementById('n').value;out.textContent=n>0?'Positive':n<0?'Negative':'Zero';}
+</script>
+</body>
+</html>

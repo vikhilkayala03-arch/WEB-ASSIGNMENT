@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counter Application</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Counter Application</h1><p>Increment and decrement a counter</p></header>
+<main class="container">
+<div class="card">
+<button onclick="change(-1)">−</button><b id="out">0</b><button onclick="change(1)">+</button>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let count=0;function change(n){count+=n;out.textContent=count;}
+</script>
+</body>
+</html>

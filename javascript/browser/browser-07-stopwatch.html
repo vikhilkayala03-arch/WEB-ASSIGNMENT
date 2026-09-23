@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stopwatch</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Stopwatch</h1><p>Create a stopwatch.</p></header>
+<main class="container">
+<div class="card">
+<div id="out">0</div><button onclick="start()">Start</button><button onclick="stop()">Stop</button><button onclick="reset()">Reset</button>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let n=0,id;function start(){if(!id)id=setInterval(()=>out.textContent=++n,1000)}function stop(){clearInterval(id);id=null}function reset(){stop();n=0;out.textContent=0}
+</script>
+</body>
+</html>

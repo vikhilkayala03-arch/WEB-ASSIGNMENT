@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Login Form</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Responsive Login Form</h1><p>Demonstrate Responsive Login Form.</p></header>
+<main class="container">
+<div class="card">
+<input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password"><button onclick="run()">Login</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){out.textContent=u.value&&p.value.length>=6?'Login valid':'Enter username and 6+ character password'}
+</script>
+</body>
+</html>

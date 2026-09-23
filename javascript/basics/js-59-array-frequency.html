@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frequency of Array Elements</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Frequency of Array Elements</h1><p>Demonstrate Frequency of Array Elements.</p></header>
+<main class="container">
+<div class="card">
+<input id="a" value="12"><input id="b" value="8"><button onclick="run()">Run</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let r={};a.value.split(',').forEach(x=>r[x]=(r[x]||0)+1);out.textContent=JSON.stringify(r,null,2)}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser Geolocation</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Browser Geolocation</h1><p>Request browser geolocation.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Get Location</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){if(!navigator.geolocation){out.textContent='Geolocation unavailable';return}navigator.geolocation.getCurrentPosition(p=>out.textContent=`Latitude: ${p.coords.latitude}\nLongitude: ${p.coords.longitude}`,e=>out.textContent='Permission denied or unavailable')}
+</script>
+</body>
+</html>

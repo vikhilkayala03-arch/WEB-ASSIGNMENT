@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Window Object</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Window Object</h1><p>Demonstrate Window object.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Show Window Info</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){out.textContent=`Width: ${innerWidth}\nHeight: ${innerHeight}`;}
+</script>
+</body>
+</html>

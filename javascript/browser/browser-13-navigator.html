@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigator Object</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Navigator Object</h1><p>Demonstrate Navigator object.</p></header>
+<main class="container">
+<div class="card">
+<pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+out.textContent=`Platform: ${navigator.platform}\nLanguage: ${navigator.language}\nOnline: ${navigator.onLine}`;
+</script>
+</body>
+</html>

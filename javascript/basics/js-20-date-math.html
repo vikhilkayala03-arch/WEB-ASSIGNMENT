@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date and Math Objects</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Date and Math Objects</h1><p>Demonstrate Date and Math objects.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Show</button><pre id="out"></pre>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function run(){let d=new Date();out.textContent=`Date: ${d}\nRandom: ${Math.random().toFixed(4)}\nSquare root of 64: ${Math.sqrt(64)}`;}
+</script>
+</body>
+</html>

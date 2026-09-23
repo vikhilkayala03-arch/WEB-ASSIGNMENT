@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classes and Objects</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Classes and Objects</h1><p>Demonstrate Classes and Objects.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Run</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+class Student{constructor(name){this.name=name}greet(){return 'Hello '+this.name}}function run(){out.textContent=new Student('Student').greet()}
+</script>
+</body>
+</html>

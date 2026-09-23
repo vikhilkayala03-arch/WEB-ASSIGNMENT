@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>setInterval</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>setInterval</h1><p>Execute code repeatedly.</p></header>
+<main class="container">
+<div class="card">
+<button onclick="run()">Start</button><p id="out"></p>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+let n=0,id;function run(){clearInterval(id);id=setInterval(()=>out.textContent=++n,1000)}
+</script>
+</body>
+</html>

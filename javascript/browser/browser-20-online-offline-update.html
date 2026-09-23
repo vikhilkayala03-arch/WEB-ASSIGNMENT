@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online/Offline Updating Page</title>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><h1>Online/Offline Updating Page</h1><p>Update page when connection changes.</p></header>
+<main class="container">
+<div class="card">
+<h2 id="out"></h2>
+</div>
+<nav class="nav">
+<a class="btn" href="../../index.html">Home</a>
+<a class="btn" href="index.html">Back to Programs</a>
+</nav>
+</main>
+<script>
+function update(){out.textContent=navigator.onLine?'You are online':'You are offline'}addEventListener('online',update);addEventListener('offline',update);update();
+</script>
+</body>
+</html>
