@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Web Technology Lab | K. Vikhil</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    width:100%;
+    padding:20px 7%;
+
+    background:#111827;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 4px 20px rgba(0,0,0,.4);
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#00e6cb;
+}
+
+.nav-links{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    background:#00e6cb;
+    color:#000;
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:60px auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #312e81,
+        #4f46e5,
+        #2563eb,
+        #0891b2
+    );
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.4);
+}
+
+.hero-icon{
+    font-size:70px;
+}
+
+.hero h1{
+    font-size:52px;
+    margin:15px 0;
+
+    font-weight:900;
+}
+
+.hero p{
+    font-size:20px;
+    color:#e0f2fe;
+}
+
+
+/* =========================
+   STUDENT DETAILS
+========================= */
+
+.student-details{
+
+    margin:55px 0 20px;
+
+    padding:35px;
+
+    background:#111827;
+
+    border:1px solid rgba(0,230,203,.25);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.4);
+}
+
+.student-details h2{
+
+    text-align:center;
+
+    font-size:32px;
+
+    margin-bottom:30px;
+
+    color:#00e6cb;
+}
+
+.details-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+}
+
+.detail-box{
+
+    padding:20px;
+
+    background:#1f2937;
+
+    border-radius:16px;
+
+    border-left:4px solid #00e6cb;
+
+    transition:.3s;
+}
+
+.detail-box:hover{
+
+    transform:translateY(-5px);
+
+    background:#263449;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.35);
+}
+
+.detail-box span{
+
+    display:block;
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+}
+
+.detail-box strong{
+
+    display:block;
+
+    color:white;
+
+    font-size:18px;
+}
+
+.assignment-box{
+
+    grid-column:1 / -1;
+
+    text-align:center;
+
+    border-left:none;
+
+    border-top:4px solid #00e6cb;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.title{
+
+    text-align:center;
+
+    margin:55px 0 35px;
+}
+
+.title h2{
+
+    font-size:36px;
+}
+
+.title p{
+
+    color:#aaa;
+
+    margin-top:8px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    color:white;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.55);
+}
+
+.card-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+}
+
+.card h2{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+}
+
+.card p{
+
+    color:#f1f5f9;
+
+    line-height:1.7;
+
+    margin-bottom:28px;
+}
+
+
+/* =========================
+   HTML CARD
+========================= */
+
+.html-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #dc2626,
+        #f97316
+    );
+}
+
+
+/* =========================
+   CSS CARD
+========================= */
+
+.css-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4
+    );
+}
+
+
+/* =========================
+   JAVASCRIPT CARD
+========================= */
+
+.js-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #db2777,
+        #ec4899
+    );
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+    display:inline-block;
+
+    padding:13px 28px;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#111827;
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:
+    scale(1.07);
+
+    background:#111827;
+
+    color:white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    margin-top:70px;
+
+    padding:28px;
+
+    text-align:center;
+
+    background:#111827;
+
+    color:#aaa;
+}
+
+footer span{
+
+    color:#00e6cb;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    .cards{
+
+        grid-template-columns:1fr;
+    }
+
+    .details-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .assignment-box{
+
+        grid-column:auto;
+    }
+
+    nav{
+
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+    .nav-links{
+
+        justify-content:center;
+    }
+
+    .hero h1{
+
+        font-size:40px;
+    }
+}
+
+
+@media(max-width:500px){
+
+    .container{
+
+        width:92%;
+
+        margin:35px auto;
+    }
+
+    .hero{
+
+        padding:60px 15px;
+    }
+
+    .hero h1{
+
+        font-size:32px;
+    }
+
+    .hero p{
+
+        font-size:16px;
+    }
+
+    .nav-links a{
+
+        padding:8px 12px;
+
+        font-size:14px;
+    }
+
+    .card{
+
+        padding:28px 20px;
+    }
+
+    .student-details{
+
+        padding:25px 18px;
+    }
+
+    .student-details h2{
+
+        font-size:26px;
+    }
+
+    .detail-box strong{
+
+        font-size:16px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NAVBAR
+===================================== -->
+
+<nav>
+
+    <div class="logo">
+
+        💻 WebTech Lab
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <!-- HOME -->
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <!-- HTML -->
+
+        <a href="html/index.html">
+            HTML
+        </a>
+
+
+        <!-- CSS -->
+
+        <a href="css/index.html">
+            CSS
+        </a>
+
+
+        <!-- JAVASCRIPT -->
+
+        <a href="javascript/index.html">
+            JavaScript
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================
+     MAIN CONTENT
+===================================== -->
+
+<div class="container">
+
+
+    <!-- =================================
+         HERO
+    ================================== -->
+
+    <section class="hero">
+
+        <div class="hero-icon">
+            💻
+        </div>
+
+        <h1>
+            Web Technology Lab
+        </h1>
+
+        <p>
+            HTML • CSS • JavaScript
+            Practical Programs
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================
+         STUDENT DETAILS
+    ================================== -->
+
+    <section class="student-details">
+
+        <h2>
+            🎓 Student Details
+        </h2>
+
+
+        <div class="details-grid">
+
+
+            <!-- STUDENT NAME -->
+
+            <div class="detail-box">
+
+                <span>
+                    👨‍🎓 Student Name
+                </span>
+
+                <strong>
+                    K. Vikhil
+                </strong>
+
+            </div>
+
+
+
+            <!-- REGISTER NUMBER -->
+
+            <div class="detail-box">
+
+                <span>
+                    🆔 Register Number
+                </span>
+
+                <strong>
+                    250200131
+                </strong>
+
+            </div>
+
+
+
+            <!-- CLASS -->
+
+            <div class="detail-box">
+
+                <span>
+                    🏫 Class / Section
+                </span>
+
+                <strong>
+                    B.Tech 2nd Year / Sec-7
+                </strong>
+
+            </div>
+
+
+
+            <!-- SUBJECT -->
+
+            <div class="detail-box">
+
+                <span>
+                    📚 Subject
+                </span>
+
+                <strong>
+                    Web Development
+                </strong>
+
+            </div>
+
+
+
+            <!-- ASSIGNMENT -->
+
+            <div class="detail-box assignment-box">
+
+                <span>
+                    💻 Assignment
+                </span>
+
+                <strong>
+                    HTML CSS JavaScript Practical Programs
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         SECTION TITLE
+    ================================== -->
+
+    <div class="title">
+
+        <h2>
+            🚀 Practical Programs
+        </h2>
+
+        <p>
+            Select a technology to explore
+            the practical programs
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================
+         PROGRAM CARDS
+    ===================================== -->
+
+    <div class="cards">
+
+
+        <!-- =================================
+             HTML CARD
+        ================================== -->
+
+        <div class="card html-card">
+
+            <div class="card-icon">
+                🌐
+            </div>
+
+            <h2>
+                HTML
+            </h2>
+
+            <p>
+                HTML tags, forms, tables,
+                multimedia, semantic elements
+                and practical programs.
+            </p>
+
+            <a
+                class="btn"
+                href="html/index.html"
+            >
+                Open HTML →
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================
+             CSS CARD
+        ================================== -->
+
+        <div class="card css-card">
+
+            <div class="card-icon">
+                🎨
+            </div>
+
+            <h2>
+                CSS
+            </h2>
+
+            <p>
+                CSS selectors, box model,
+                Flexbox, Grid, animations
+                and responsive design.
+            </p>
+
+            <a
+                class="btn"
+                href="css/index.html"
+            >
+                Open CSS →
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================
+             JAVASCRIPT CARD
+        ================================== -->
+
+        <div class="card js-card">
+
+            <div class="card-icon">
+                ⚡
+            </div>
+
+            <h2>
+                JavaScript
+            </h2>
+
+            <p>
+                JavaScript basics, DOM,
+                Events, Forms, Browser Objects,
+                Storage and Mini Projects.
+            </p>
+
+            <a
+                class="btn"
+                href="javascript/index.html"
+            >
+                Open JavaScript →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <p>
+
+        © 2026
+
+        <span>
+            Web Technology Lab
+        </span>
+
+        | K. Vikhil
+        | 250200131
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

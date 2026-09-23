@@ -1,0 +1,621 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #06b6d4;
+            --accent: #8b5cf6;
+            --dark: #111827;
+            --text: #374151;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(37, 99, 235, 0.15),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(6, 182, 212, 0.15),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f8fafc,
+                    #eff6ff
+                );
+        }
+
+        /* HEADER */
+
+        header {
+            position: relative;
+            overflow: hidden;
+
+            text-align: center;
+            color: white;
+
+            padding: 70px 20px 85px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1e3a8a,
+                    #2563eb,
+                    #0891b2
+                );
+
+            box-shadow:
+                0 12px 35px
+                rgba(30, 64, 175, 0.25);
+        }
+
+        header::before,
+        header::after {
+            content: "";
+            position: absolute;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.10);
+        }
+
+        header::before {
+            width: 260px;
+            height: 260px;
+
+            top: -150px;
+            left: -70px;
+        }
+
+        header::after {
+            width: 330px;
+            height: 330px;
+
+            right: -120px;
+            bottom: -220px;
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 1;
+
+            font-size: clamp(36px, 6vw, 58px);
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.18);
+        }
+
+        header p {
+            position: relative;
+            z-index: 1;
+
+            font-size: 18px;
+
+            opacity: 0.93;
+        }
+
+        /* MAIN */
+
+        .container {
+            width: min(1180px, 92%);
+
+            margin: -38px auto 55px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PROGRAM GRID */
+
+        .programs {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px, 1fr)
+                );
+
+            gap: 22px;
+        }
+
+        /* CARD */
+
+        .card {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                rgba(255, 255, 255, 0.94);
+
+            padding: 27px 24px 24px;
+
+            border-radius: 20px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.8);
+
+            box-shadow:
+                0 12px 30px
+                rgba(31, 41, 55, 0.10);
+
+            backdrop-filter: blur(12px);
+
+            transition:
+                transform 0.28s ease,
+                box-shadow 0.28s ease,
+                border-color 0.28s ease;
+        }
+
+        /* TOP COLOR LINE */
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--secondary),
+                    var(--accent)
+                );
+        }
+
+        /* CARD DECORATION */
+
+        .card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 90px;
+            height: 90px;
+
+            right: -45px;
+            bottom: -45px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(37, 99, 235, 0.07);
+        }
+
+        /* HOVER */
+
+        .card:hover {
+            transform:
+                translateY(-8px)
+                scale(1.015);
+
+            box-shadow:
+                0 20px 45px
+                rgba(37, 99, 235, 0.18);
+
+            border-color:
+                rgba(37, 99, 235, 0.25);
+        }
+
+        /* NUMBER */
+
+        .number {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+
+            margin-bottom: 15px;
+
+            border-radius: 50%;
+
+            color: white;
+
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--accent)
+                );
+
+            box-shadow:
+                0 6px 15px
+                rgba(37, 99, 235, 0.25);
+        }
+
+        /* TITLE */
+
+        .card h2 {
+            color: #1e3a8a;
+
+            font-size: 19px;
+
+            line-height: 1.4;
+
+            margin-bottom: 12px;
+        }
+
+        /* DESCRIPTION */
+
+        .card p {
+            color: var(--muted);
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+        /* BUTTON */
+
+        .card a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            position: relative;
+            z-index: 2;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 11px 18px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    #1d4ed8
+                );
+
+            box-shadow:
+                0 7px 18px
+                rgba(37, 99, 235, 0.25);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .card a::after {
+            content: "→";
+
+            font-size: 17px;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+        .card a:hover {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0891b2,
+                    #0e7490
+                );
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 10px 22px
+                rgba(8, 145, 178, 0.25);
+        }
+
+        .card a:hover::after {
+            transform:
+                translateX(4px);
+        }
+
+        /* HOME BUTTON */
+
+        .home {
+            text-align: center;
+
+            margin-top: 40px;
+        }
+
+        .home a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 13px 24px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #4f46e5
+                );
+
+            box-shadow:
+                0 8px 20px
+                rgba(79, 70, 229, 0.25);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .home a:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(79, 70, 229, 0.30);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111827;
+
+            color: #dbeafe;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-top:
+                4px solid #2563eb;
+        }
+
+        footer p {
+            font-size: 15px;
+
+            letter-spacing: 0.4px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding:
+                    55px 16px
+                    75px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 94%;
+
+                margin-top: -28px;
+            }
+
+            .programs {
+                grid-template-columns: 1fr;
+
+                gap: 17px;
+            }
+
+            .card {
+                padding:
+                    24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>HTML Programs</h1>
+
+        <p>
+            ✦ HTML &amp; Web Development Laboratory Exercises ✦
+        </p>
+
+    </header>
+
+
+    <!-- PROGRAMS -->
+
+    <div class="container">
+
+        <div class="programs">
+
+            <div class="card">
+                <div class="number">01</div>
+                <h2>Basic HTML Webpage</h2>
+                <p>Create a basic HTML webpage using fundamental HTML elements.</p>
+                <a href="html-01.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">02</div>
+                <h2>Ordered, Unordered and Description Lists</h2>
+                <p>Demonstrate different types of HTML lists.</p>
+                <a href="html-02.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">03</div>
+                <h2>Tables and Merged Cells</h2>
+                <p>Create tables using rows, columns and merged cells.</p>
+                <a href="html-03.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">04</div>
+                <h2>Images and Hyperlinks</h2>
+                <p>Demonstrate images and hyperlinks in HTML.</p>
+                <a href="html-04.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">05</div>
+                <h2>Student Registration Form</h2>
+                <p>Create a student registration form using HTML.</p>
+                <a href="html-05.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">06</div>
+                <h2>Audio and Video</h2>
+                <p>Add audio and video content using HTML5.</p>
+                <a href="html-06.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">07</div>
+                <h2>Frames / Iframes</h2>
+                <p>Demonstrate frames and iframe elements.</p>
+                <a href="html-07.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">08</div>
+                <h2>Semantic Elements</h2>
+                <p>Demonstrate semantic HTML5 elements.</p>
+                <a href="html-08.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">09</div>
+                <h2>HTML5 Input Types</h2>
+                <p>Demonstrate different HTML5 input types.</p>
+                <a href="html-09.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">10</div>
+                <h2>College Timetable</h2>
+                <p>Create a college timetable using HTML tables.</p>
+                <a href="html-10.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">11</div>
+                <h2>Internal and External CSS</h2>
+                <p>Demonstrate internal and external CSS styling.</p>
+                <a href="html-11.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">12</div>
+                <h2>CSS Selectors, Colors, Fonts, Margins, Padding and Borders</h2>
+                <p>Demonstrate common CSS properties and selectors.</p>
+                <a href="html-12.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">13</div>
+                <h2>Responsive Webpage using Media Queries</h2>
+                <p>Create a responsive webpage using CSS media queries.</p>
+                <a href="html-13.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">14</div>
+                <h2>Bootstrap Components</h2>
+                <p>Demonstrate commonly used Bootstrap components.</p>
+                <a href="html-14.html">Open Program</a>
+            </div>
+
+            <div class="card">
+                <div class="number">15</div>
+                <h2>Personal Portfolio</h2>
+                <p>Create a personal portfolio webpage.</p>
+                <a href="html-15.html">Open Program</a>
+            </div>
+
+        </div>
+
+
+        <!-- HOME BUTTON -->
+
+        <div class="home">
+            <a href="../index.html">
+                ← Back to Home
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            HTML | 15 Programs
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```
